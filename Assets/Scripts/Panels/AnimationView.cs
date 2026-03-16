@@ -6,16 +6,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum AnimationToPlay
+{
+    Left,
+    Right
+}
+
 public class AnimationView : MonoBehaviour
 {
-    public delegate int GetCurrentAnimationIndex();
-    private GetCurrentAnimationIndex GetCurrentAnimIndex;
-
-    public enum AnimationToPlay
-    {
-        Left,
-        Right
-    }
+    private AnimationController animController;
+    private AnimationData[] animationDatas;
 
     [Header("Texts")]
     public TextMeshProUGUI FarLeftTitle;
@@ -23,9 +23,6 @@ public class AnimationView : MonoBehaviour
     public TextMeshProUGUI CenterTitle;
     public TextMeshProUGUI CloseRightTitle;
     public TextMeshProUGUI FarRightTitle;
-
-    [Header("Animation Titles")]
-    public string[] AnimationTitles;
 
     [Header("Animator")]
     public Animator TitleAnimator;
@@ -38,9 +35,11 @@ public class AnimationView : MonoBehaviour
 
     private Action OnPlayTitleEndAction;
 
-    public void InitTitleView(GetCurrentAnimationIndex SentGetCurrentAnimIndexMethod)
+    public void InitTitleView(AnimationController animController)
     {
-        GetCurrentAnimIndex = SentGetCurrentAnimIndexMethod;
+        this.animController = animController;
+        animationDatas = animController.animationDatas;
+
         UpdateAnimationTitles();
     }
 
@@ -59,8 +58,8 @@ public class AnimationView : MonoBehaviour
     {
         OnPlayTitleEndAction?.Invoke();
 
-        int currentAnimIndex = GetCurrentAnimIndex();
-        CenterTitle.text = AnimationTitles[currentAnimIndex];
+        CenterTitle.text = animController.GetCurrentAnimationTitle();
+        int currentAnimIndex = animController.GetCurrentAnimationIndex();
 
         #region Left Titles
         // If the current animation index is the FIRST ONE or the SECOND ONE of the list, set the close left and far left titles to the last two titles in the list
@@ -69,46 +68,46 @@ public class AnimationView : MonoBehaviour
             // If the current animation index is the FIRST ONE of the list
             if (currentAnimIndex == 0)
             {
-                CloseLeftTitle.text = AnimationTitles[AnimationTitles.Count() - 1]; // Set the close left title to the last animation title
-                FarLeftTitle.text = AnimationTitles[AnimationTitles.Count() - 2]; // Set the far left title to the second to last animation title
+                CloseLeftTitle.text = animationDatas[animationDatas.Count() - 1].animationTitle; // Set the close left title to the last animation title
+                FarLeftTitle.text = animationDatas[animationDatas.Count() - 2].animationTitle; // Set the far left title to the second to last animation title
             }
             // If the current animation index is the SECOND ONE of the list
             else if (currentAnimIndex - 1 == 0)
             {
-                CloseLeftTitle.text = AnimationTitles[0]; // Set the close left title to the first animation title
-                FarLeftTitle.text = AnimationTitles[AnimationTitles.Count() - 1]; // Set the far left title to the last animation title
+                CloseLeftTitle.text = animationDatas[0].animationTitle; // Set the close left title to the first animation title
+                FarLeftTitle.text = animationDatas[animationDatas.Count() - 1].animationTitle; // Set the far left title to the last animation title
             }
         }
         // If the current animation index is not the FIRST ONE or the SECOND ONE of the list, set the close left and far left titles to the previous two titles in the list
         else
         {
-            CloseLeftTitle.text = AnimationTitles[currentAnimIndex - 1];
-            FarLeftTitle.text = AnimationTitles[currentAnimIndex - 2];
+            CloseLeftTitle.text = animationDatas[currentAnimIndex - 1].animationTitle;
+            FarLeftTitle.text = animationDatas[currentAnimIndex - 2].animationTitle;
         }
         #endregion
 
         #region Right Titles
         // If the current animation index is the LAST ONE or the SECOND TO LAST ONE of the list, set the close right and far right titles to the first two titles in the list
-        if (currentAnimIndex + 1 >= AnimationTitles.Count() - 1)
+        if (currentAnimIndex + 1 >= animationDatas.Count() - 1)
         {
             // If the current animation index is the LAST ONE of the list
-            if (currentAnimIndex == AnimationTitles.Count() - 1)
+            if (currentAnimIndex == animationDatas.Count() - 1)
             {
-                CloseRightTitle.text = AnimationTitles[0]; // Set the close right title to the first animation title
-                FarRightTitle.text = AnimationTitles[1]; // Set the far right title to the second animation title
+                CloseRightTitle.text = animationDatas[0].animationTitle; // Set the close right title to the first animation title
+                FarRightTitle.text = animationDatas[1].animationTitle; // Set the far right title to the second animation title
             }
             // If the current animation index is the SECOND TO LAST ONE of the list
-            else if (currentAnimIndex + 1 == AnimationTitles.Count() - 1)
+            else if (currentAnimIndex + 1 == animationDatas.Count() - 1)
             {
-                CloseRightTitle.text = AnimationTitles[AnimationTitles.Count() - 1]; // Set the close right title to the last animation title
-                FarRightTitle.text = AnimationTitles[0]; // Set the far right title to the first animation title
+                CloseRightTitle.text = animationDatas[animationDatas.Count() - 1].animationTitle; // Set the close right title to the last animation title
+                FarRightTitle.text = animationDatas[0].animationTitle; // Set the far right title to the first animation title
             }
         }
         // If the current animation index is not the LAST ONE or the SECOND TO LAST ONE of the list, set the close right and far right titles to the next two titles in the list
         else
         {
-            CloseRightTitle.text = AnimationTitles[currentAnimIndex + 1];
-            FarRightTitle.text = AnimationTitles[currentAnimIndex + 2];
+            CloseRightTitle.text = animationDatas[currentAnimIndex + 1].animationTitle;
+            FarRightTitle.text = animationDatas[currentAnimIndex + 2].animationTitle;
         }
         #endregion
     }

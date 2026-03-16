@@ -12,4 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d687b2e5a6274b8a14f7738f8fd1f, type: 3}
   m_Name: ModelData_GiantMech
   m_EditorClassIdentifier: Assembly-CSharp::ModelData_SO
-  animations: []
+  modelPrefab: {fileID: 3491488324560424832, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+  animationDatas:
+  - animParam: idle
+    animationTitle: Idle
+  - animParam: landing
+    animationTitle: Landing
+  - animParam: death
+    animationTitle: Death
+  - animParam: walkRight
+    animationTitle: Walk Right
+  - animParam: walkLeft
+    animationTitle: Walk Left
+  - animParam: walkForward
+    animationTitle: Walk Forward
+  - animParam: walkBackward
+    animationTitle: Walk Backward
+  spawnPosition: {x: 0, y: 0, z: 7}
+  spawnAngle: {x: 0, y: 180, z: 0}
