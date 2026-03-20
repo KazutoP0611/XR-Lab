@@ -13,7 +13,6 @@ public class EntityState
 
     public virtual void Enter()
     {
-        Debug.Log($"Entered {animParam} state.");
         anim.SetBool(animParam, true);
     }
 

@@ -38,4 +38,14 @@ public class ShowModel : MonoBehaviour
         EntityState changeToState = animStates[currentAnimationIndex];
         stateMachine.ChangeState(changeToState);
     }
+
+    public void SetAnimationSpeed(bool isPlaying)
+    {
+        // This will change the entire animator's speed, so all animations will be affected by this change.
+        //anim.speed = isPlaying ? 1 : 0;
+
+        // This will also change anim speed, but it will only affect the current animation that is playing.
+        // So if the animation is paused, it will not affect the speed of the animation when it is played again.
+        anim.SetFloat("AnimSpeed", isPlaying ? 1 : 0);
+    }
 }

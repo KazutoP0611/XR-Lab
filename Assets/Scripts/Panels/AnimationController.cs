@@ -21,10 +21,16 @@ public class AnimationController : MonoBehaviour
         if (animationView == null)
             Debug.LogWarning("\"Animation View\" components has not been referenced yet.");
 
+        // Prepare the animation data and show model before initializing the title view.
         SetAnimationDataDictionary();
         InstantiateShowModel();
 
+        // Initialize the title view after preparing the animation data and show model.
+        // So now title view is showing the current animation.
         animationView.InitTitleView(this);
+
+        // Play animation when scene starts.
+        PlayPauseAnimation();
     }
 
     private void SetAnimationDataDictionary()
@@ -52,10 +58,13 @@ public class AnimationController : MonoBehaviour
         showModel.ChangeAnimation(currentAnimationIndex);
     }
 
+    #region Animation's Controller
     public void PlayPauseAnimation()
     {
         animIsPlaying = !animIsPlaying;
         animationView.SetPlayButton(animIsPlaying);
+
+        showModel.SetAnimationSpeed(animIsPlaying);
     }
 
     public void ToLeftAnimation()
@@ -71,6 +80,7 @@ public class AnimationController : MonoBehaviour
         animationView.PlayTitleAnimation(AnimationToPlay.Right, ChangeModelAnimation);
         CurrenAnimationIndexCheck();
     }
+    #endregion
 
     private void CurrenAnimationIndexCheck()
     {
