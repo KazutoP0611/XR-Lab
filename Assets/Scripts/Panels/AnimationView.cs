@@ -31,6 +31,7 @@ public class AnimationView : MonoBehaviour
     public Sprite PauseSprite;
 
     [Header("Mode Button Settings")]
+    [SerializeField] private Toggle panelObjectButton;
     [SerializeField] private Toggle handsizeButton;
 
     public void InitTitleView(MainShowModelController animController)
@@ -39,7 +40,9 @@ public class AnimationView : MonoBehaviour
         animationDatas = animController.animationDatas;
 
         UpdateAnimationTitles();
-        SetUsableHandizeButton(animController.modeldata.handSize);
+
+        // Set up buttons
+        EnableHandSizeButton(animController.modeldata.handSize);
     }
 
     public void PlayTitleAnimation(PanelAnimation animToPlay, Action OnPlayTitleEnd = null)
@@ -119,5 +122,7 @@ public class AnimationView : MonoBehaviour
             PlayButtonIcon.sprite = PlaySprite;
     }
 
-    private void SetUsableHandizeButton(bool usable) => handsizeButton.interactable = usable;
+    public void EnablePanelObjectButton(bool enable) => panelObjectButton.interactable = enable;
+
+    public void EnableHandSizeButton(bool enable) => handsizeButton.interactable = enable;
 }

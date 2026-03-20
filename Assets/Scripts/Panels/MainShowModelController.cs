@@ -8,6 +8,7 @@ public class MainShowModelController : MonoBehaviour
     
     private bool animIsPlaying = false;
     private bool xrayModeIsOn = false;
+    private bool handsizeMode = true;
 
     private Dictionary<int, AnimationData> animationDataDict;
 
@@ -18,6 +19,9 @@ public class MainShowModelController : MonoBehaviour
     [Header("General Details")]
     public ModelData_SO modeldata;
 
+    [Header("Cut Panel Details")]
+    [SerializeField] private GameObject cutPanelObject;
+
     private void Start()
     {
         if (animationView == null)
@@ -25,11 +29,14 @@ public class MainShowModelController : MonoBehaviour
 
         // Prepare the animation data and show model before initializing the title view.
         SetAnimationDataDictionary();
+
+        // Instantiate show model.
         InstantiateShowModel();
 
         // Initialize the title view after preparing the animation data and show model.
         // So now title view is showing the current animation.
         animationView.InitTitleView(this);
+        // TODO Set up buttons.
 
         // Play animation when scene starts.
         PlayPauseAnimation();
@@ -96,6 +103,11 @@ public class MainShowModelController : MonoBehaviour
         showModel.ChangeAnimation(currentAnimationIndex);
     }
 
+    public void ToggleFreeMode()
+    {
+        // Disable hand size mode button, and change show model to small size;
+    }
+
     public void ToggleXRayMode()
     {
         xrayModeIsOn = !xrayModeIsOn;
@@ -104,16 +116,23 @@ public class MainShowModelController : MonoBehaviour
 
     public void TogglePanelObject()
     {
+        xrayModeIsOn = false;
+        showModel.SetModelXrayMode(xrayModeIsOn);
 
+        // Set active panel object
+        cutPanelObject.SetActive(!cutPanelObject.activeInHierarchy);
+        // Change material of the model to the "Cut shader" material.
     }
 
     public void ToggleRealWorldView()
     {
-
+        // Toggle skybox and MR components;
     }
 
     public void ToggleHandSizeModel()
     {
-
+        // Disable panel button in real size mode;
+        handsizeMode = !handsizeMode;
+        animationView.EnablePanelObjectButton(handsizeMode);
     }
 }
