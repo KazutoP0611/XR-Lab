@@ -70,14 +70,14 @@ public class AnimationController : MonoBehaviour
     public void ToLeftAnimation()
     {
         currentAnimationIndex--;
-        animationView.PlayTitleAnimation(AnimationToPlay.Left, ChangeModelAnimation);
+        animationView.PlayTitleAnimation(PanelAnimation.Left, ChangeModelAnimation);
         CurrenAnimationIndexCheck();
     }
 
     public void ToRightAnimation()
     {
         currentAnimationIndex++;
-        animationView.PlayTitleAnimation(AnimationToPlay.Right, ChangeModelAnimation);
+        animationView.PlayTitleAnimation(PanelAnimation.Right, ChangeModelAnimation);
         CurrenAnimationIndexCheck();
     }
     #endregion

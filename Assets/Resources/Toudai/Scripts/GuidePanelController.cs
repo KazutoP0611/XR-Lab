@@ -23,68 +23,31 @@ public class GuidePanelController : MonoBehaviour
 
     [Header("Animations")]
     public Animator GuideAnimator;
-    public string NormalTrigger;
-    public string LeftToRightTrigger;
-    public string RightToLeftTrigger;
 
     public void OpenPage(int page)
     {
-        SetButton(page);
-
         if (page == 0)
-        {
-            GuideAnimator.SetTrigger(RightToLeftTrigger);
-        }
+            GuideAnimator.SetTrigger(PanelAnimation.Left.ToString());
         else
-        {
-            GuideAnimator.SetTrigger(LeftToRightTrigger);
-        }
-
-        //switch (page)
-        //{
-        //    case 0:
-        //        //BeforeButtonToggle.interactable = false;
-        //        //NextButtonToggle.interactable = true;
-        //        //PreviousPageIndicator.color = SelectedIndicatorColor;
-        //        //NextPageIndicator.color = UnselectedIndicatorColor;
-        //        GuideAnimator.SetTrigger(RightToLeftTrigger);
-        //        break;
-        //    case 1:
-        //        //BeforeButtonToggle.interactable = true;
-        //        //NextButtonToggle.interactable = false;
-        //        //PreviousPageIndicator.color = UnselectedIndicatorColor;
-        //        //NextPageIndicator.color = SelectedIndicatorColor;
-        //        GuideAnimator.SetTrigger(LeftToRightTrigger);
-        //        break;
-        //}
+            GuideAnimator.SetTrigger(PanelAnimation.Right.ToString());
     }
 
-    public void SetIndicator(int page)
+    public void SetGuidePanelPageIndicator(int page)
     {
-        SetButton(page);
+        SetLeftAndRightButtons(page);
         PreviousPageIndicator.color = page == 0 ? SelectedIndicatorColor : UnselectedIndicatorColor;
         NextPageIndicator.color = page == 0 ? UnselectedIndicatorColor : SelectedIndicatorColor;
     }
 
-    private void SetButton(int page)
+    private void SetLeftAndRightButtons(int page)
     {
         BeforeButtonToggle.interactable = page == 0 ? false : true;
         NextButtonToggle.interactable = page == 0 ? true : false;
     }
 
-    public void SetToNormal()
-    {
-        GuideAnimator.SetTrigger(NormalTrigger);
-    }
-
-    //public void LeftToRight()
+    //public void SetToNormal()
     //{
-    //    GuideAnimator.SetTrigger(LeftToRightTrigger);
-    //}
-
-    //public void RightToLeft()
-    //{
-    //    GuideAnimator.SetTrigger(RightToLeftTrigger);
+    //    GuideAnimator.SetTrigger(PanelAnimation.Normal.ToString());
     //}
 
     public void TogglePanel(bool active)

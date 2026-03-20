@@ -22,10 +22,16 @@ public class PanelsController : MonoBehaviour
 
     private void Start()
     {
-        //GuidePanelMenuToggler.HidePanel();
-        GuidePanelController.SetIndicator(0);
-        GuidePanelController.TogglePanel(false);
+        InitGuidePanel();
+    }
+
+    private void InitGuidePanel()
+    {
+        // Init guide panel to the first page and hide it at the start of the scene.
+        GuidePanelController.SetGuidePanelPageIndicator(0);
+
         GuidePanelIsActive = false;
+        GuidePanelController.TogglePanel(GuidePanelIsActive);
     }
 
     public void SetActiveGuidePanel()

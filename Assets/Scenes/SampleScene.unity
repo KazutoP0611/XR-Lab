@@ -2999,7 +2999,7 @@ GameObject:
   - component: {fileID: 151474170}
   - component: {fileID: 151474169}
   m_Layer: 0
-  m_Name: PanelGroup
+  m_Name: Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9146,9 +9146,6 @@ MonoBehaviour:
   SelectedIndicatorColor: {r: 1, g: 1, b: 1, a: 1}
   UnselectedIndicatorColor: {r: 0.5254902, g: 0.5254902, b: 0.5254902, a: 1}
   GuideAnimator: {fileID: 572489402}
-  NormalTrigger: Normal
-  LeftToRightTrigger: LeftToRight
-  RightToLeftTrigger: RightToLeft
 --- !u!114 &572489404
 MonoBehaviour:
   m_ObjectHideFlags: 0

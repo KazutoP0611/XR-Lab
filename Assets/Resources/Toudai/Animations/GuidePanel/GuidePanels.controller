@@ -36,7 +36,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: RightToLeft
+    m_ConditionEvent: Left
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6532591405880612516}
@@ -143,13 +143,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: LeftToRight
+  - m_Name: Left
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: RightToLeft
+  - m_Name: Right
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -182,10 +182,10 @@ AnimatorStateMachine:
     m_Position: {x: 720, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -269507612663329787}
-    m_Position: {x: 780, y: 190, z: 0}
+    m_Position: {x: 890, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6532591405880612516}
-    m_Position: {x: 500, y: 120, z: 0}
+    m_Position: {x: 540, y: 150, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -205,7 +205,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: LeftToRight
+    m_ConditionEvent: Right
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -269507612663329787}

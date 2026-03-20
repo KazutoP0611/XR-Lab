@@ -6,12 +6,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum AnimationToPlay
-{
-    Left,
-    Right
-}
-
 public class AnimationView : MonoBehaviour
 {
     private AnimationController animController;
@@ -43,7 +37,7 @@ public class AnimationView : MonoBehaviour
         UpdateAnimationTitles();
     }
 
-    public void PlayTitleAnimation(AnimationToPlay animToPlay, Action OnPlayTitleEnd = null)
+    public void PlayTitleAnimation(PanelAnimation animToPlay, Action OnPlayTitleEnd = null)
     {
         OnPlayTitleEndAction = OnPlayTitleEnd;
         TitleAnimator.SetTrigger(animToPlay.ToString());

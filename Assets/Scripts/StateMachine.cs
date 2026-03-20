@@ -7,8 +7,6 @@ public class StateMachine
 
     public void Initialize(EntityState startState)
     {
-        Debug.LogWarning("State Machine Initialized.");
-
         currentState = startState;
         currentState.Enter();
         canChangeState = true;
