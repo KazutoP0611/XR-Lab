@@ -46,6 +46,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShowModel
   anim: {fileID: 5135996505423911466}
+  xrayModeDatas:
+  - rend: {fileID: 6791380025915209914}
+    originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
+    xrayMat: {fileID: 2100000, guid: 5cd9318d531e79e43925dea8b2c2f12f, type: 2}
+  - rend: {fileID: 8061162850387706130}
+    originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
+    xrayMat: {fileID: 2100000, guid: 84c73ee3dfa56a5468c43e1376adf75d, type: 2}
+  - rend: {fileID: 5181165637375834946}
+    originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
+    xrayMat: {fileID: 2100000, guid: 84c73ee3dfa56a5468c43e1376adf75d, type: 2}
+  - rend: {fileID: 8591613119705393545}
+    originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
+    xrayMat: {fileID: 2100000, guid: 357764fb77fe2414f88a79268d581f85, type: 2}
 --- !u!1001 &5940250396305691410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115,6 +128,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7670943650102912061, guid: 3afb34c3f4ada27478a3799186b8946e, type: 3}
   m_PrefabInstance: {fileID: 5940250396305691410}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &5181165637375834946 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1555766008035387472, guid: 3afb34c3f4ada27478a3799186b8946e, type: 3}
+  m_PrefabInstance: {fileID: 5940250396305691410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &6791380025915209914 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 887163383176457128, guid: 3afb34c3f4ada27478a3799186b8946e, type: 3}
+  m_PrefabInstance: {fileID: 5940250396305691410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8061162850387706130 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4444774261462389248, guid: 3afb34c3f4ada27478a3799186b8946e, type: 3}
+  m_PrefabInstance: {fileID: 5940250396305691410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8135740455340315011 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2492732042575938193, guid: 3afb34c3f4ada27478a3799186b8946e, type: 3}
@@ -142,3 +170,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!137 &8591613119705393545 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2687392096482802331, guid: 3afb34c3f4ada27478a3799186b8946e, type: 3}
+  m_PrefabInstance: {fileID: 5940250396305691410}
+  m_PrefabAsset: {fileID: 0}

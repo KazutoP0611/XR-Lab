@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AnimationView : MonoBehaviour
 {
-    private AnimationController animController;
+    private MainShowModelController animController;
     private AnimationData[] animationDatas;
+    
+    private Action OnPlayTitleEndAction;
 
     [Header("Texts")]
     public TextMeshProUGUI FarLeftTitle;
@@ -27,14 +30,16 @@ public class AnimationView : MonoBehaviour
     public Sprite PlaySprite;
     public Sprite PauseSprite;
 
-    private Action OnPlayTitleEndAction;
+    [Header("Mode Button Settings")]
+    [SerializeField] private Toggle handsizeButton;
 
-    public void InitTitleView(AnimationController animController)
+    public void InitTitleView(MainShowModelController animController)
     {
         this.animController = animController;
         animationDatas = animController.animationDatas;
 
         UpdateAnimationTitles();
+        SetUsableHandizeButton(animController.modeldata.handSize);
     }
 
     public void PlayTitleAnimation(PanelAnimation animToPlay, Action OnPlayTitleEnd = null)
@@ -113,4 +118,6 @@ public class AnimationView : MonoBehaviour
         else
             PlayButtonIcon.sprite = PlaySprite;
     }
+
+    private void SetUsableHandizeButton(bool usable) => handsizeButton.interactable = usable;
 }

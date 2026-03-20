@@ -45,11 +45,6 @@ public class GuidePanelController : MonoBehaviour
         NextButtonToggle.interactable = page == 0 ? true : false;
     }
 
-    //public void SetToNormal()
-    //{
-    //    GuideAnimator.SetTrigger(PanelAnimation.Normal.ToString());
-    //}
-
     public void TogglePanel(bool active)
     {
         PanelObject.SetActive(active);

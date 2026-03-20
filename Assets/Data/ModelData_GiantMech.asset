@@ -30,3 +30,4 @@ MonoBehaviour:
     animationTitle: Walk Backward
   spawnPosition: {x: 0, y: 0, z: 7}
   spawnAngle: {x: 0, y: 180, z: 0}
+  handSize: 1

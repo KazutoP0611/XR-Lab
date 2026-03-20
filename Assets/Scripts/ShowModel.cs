@@ -1,5 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public struct XrayModeData
+{
+    public Renderer rend;
+    public Material originMat;
+    public Material xrayMat;
+}
 
 public class ShowModel : MonoBehaviour
 {
@@ -8,6 +17,9 @@ public class ShowModel : MonoBehaviour
     private Dictionary<int, EntityState> animStates;
 
     [SerializeField] private Animator anim;
+
+    [Header("X-Ray Mode Data Settings")]
+    [SerializeField] private XrayModeData[] xrayModeDatas;
 
     private void Start()
     {
@@ -47,5 +59,13 @@ public class ShowModel : MonoBehaviour
         // This will also change anim speed, but it will only affect the current animation that is playing.
         // So if the animation is paused, it will not affect the speed of the animation when it is played again.
         anim.SetFloat("AnimSpeed", isPlaying ? 1 : 0);
+    }
+
+    public virtual void SetModelXrayMode(bool xrayMode)
+    {
+        foreach (var xrayData in xrayModeDatas)
+        {
+            xrayData.rend.material = xrayMode ? xrayData.xrayMat : xrayData.originMat;
+        }
     }
 }

@@ -15,4 +15,5 @@ public class ModelData_SO : ScriptableObject
     public AnimationData[] animationDatas;
     public Vector3 spawnPosition;
     public Vector3 spawnAngle;
+    public bool handSize = false;
 }

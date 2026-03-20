@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationController : MonoBehaviour
+public class MainShowModelController : MonoBehaviour
 {
     private ShowModel showModel;
-    private bool animIsPlaying = false;
     private int currentAnimationIndex;
+    
+    private bool animIsPlaying = false;
+    private bool xrayModeIsOn = false;
 
     private Dictionary<int, AnimationData> animationDataDict;
 
@@ -53,12 +55,11 @@ public class AnimationController : MonoBehaviour
         showModel.InitModel(animationDataDict, currentAnimationIndex);
     }
 
-    private void ChangeModelAnimation()
-    {
-        showModel.ChangeAnimation(currentAnimationIndex);
-    }
+    public string GetCurrentAnimationTitle() => animationDataDict[currentAnimationIndex].animationTitle;
 
-    #region Animation's Controller
+    public int GetCurrentAnimationIndex() => currentAnimationIndex;
+
+    #region Animation Panel View's Controller
     public void PlayPauseAnimation()
     {
         animIsPlaying = !animIsPlaying;
@@ -90,7 +91,29 @@ public class AnimationController : MonoBehaviour
             currentAnimationIndex = 0;  
     }
 
-    public string GetCurrentAnimationTitle() => animationDataDict[currentAnimationIndex].animationTitle;
+    private void ChangeModelAnimation()
+    {
+        showModel.ChangeAnimation(currentAnimationIndex);
+    }
 
-    public int GetCurrentAnimationIndex() => currentAnimationIndex;
+    public void ToggleXRayMode()
+    {
+        xrayModeIsOn = !xrayModeIsOn;
+        showModel.SetModelXrayMode(xrayModeIsOn);
+    }
+
+    public void TogglePanelObject()
+    {
+
+    }
+
+    public void ToggleRealWorldView()
+    {
+
+    }
+
+    public void ToggleHandSizeModel()
+    {
+
+    }
 }
