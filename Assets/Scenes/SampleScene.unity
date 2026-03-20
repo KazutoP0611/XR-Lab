@@ -7875,7 +7875,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 790464133}
         m_TargetAssemblyTypeName: AnimationController, Assembly-CSharp
-        m_MethodName: NextAnimation
+        m_MethodName: ToRightAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14893,7 +14893,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 790464133}
         m_TargetAssemblyTypeName: AnimationController, Assembly-CSharp
-        m_MethodName: PreviousAnimation
+        m_MethodName: ToLeftAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -58,17 +58,17 @@ public class AnimationController : MonoBehaviour
         animationView.SetPlayButton(animIsPlaying);
     }
 
-    public void NextAnimation()
-    {
-        currentAnimationIndex++;
-        animationView.PlayTitleAnimation(AnimationToPlay.Right, ChangeModelAnimation);
-        CurrenAnimationIndexCheck();
-    }
-
-    public void PreviousAnimation()
+    public void ToLeftAnimation()
     {
         currentAnimationIndex--;
         animationView.PlayTitleAnimation(AnimationToPlay.Left, ChangeModelAnimation);
+        CurrenAnimationIndexCheck();
+    }
+
+    public void ToRightAnimation()
+    {
+        currentAnimationIndex++;
+        animationView.PlayTitleAnimation(AnimationToPlay.Right, ChangeModelAnimation);
         CurrenAnimationIndexCheck();
     }
 
