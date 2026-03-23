@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 
 [Serializable]
-public struct XrayModeData
+public struct ModelMatData
 {
     public Renderer rend;
     public Material originMat;
+    public Material cutMat;
     public Material xrayMat;
 }
 
@@ -18,8 +20,8 @@ public class ShowModel : MonoBehaviour
 
     [SerializeField] private Animator anim;
 
-    [Header("X-Ray Mode Data Settings")]
-    [SerializeField] private XrayModeData[] xrayModeDatas;
+    [Header("Model Data Settings")]
+    [SerializeField] private ModelMatData[] modelMatDatas;
 
     private void Start()
     {
@@ -61,11 +63,26 @@ public class ShowModel : MonoBehaviour
         anim.SetFloat("AnimSpeed", isPlaying ? 1 : 0);
     }
 
-    public virtual void SetModelXrayMode(bool xrayMode)
+    public virtual void SetModelMaterialFromMode(ModelMatMode modelMode)
     {
-        foreach (var xrayData in xrayModeDatas)
+        switch (modelMode)
         {
-            xrayData.rend.material = xrayMode ? xrayData.xrayMat : xrayData.originMat;
+            case ModelMatMode.FreeMode:
+                foreach (var modelData in modelMatDatas)
+                    modelData.rend.material = modelData.originMat;
+                break;
+            case ModelMatMode.NormalMode:
+                foreach (var modelData in modelMatDatas)
+                    modelData.rend.material = modelData.originMat;
+                break;
+            case ModelMatMode.CutMode:
+                foreach (var modelData in modelMatDatas)
+                    modelData.rend.material = modelData.cutMat;
+                break;
+            case ModelMatMode.XrayMode:
+                foreach (var modelData in modelMatDatas)
+                    modelData.rend.material = modelData.xrayMat;
+                break;
         }
     }
 }

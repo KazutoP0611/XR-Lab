@@ -60,8 +60,8 @@ public class AnimationView : MonoBehaviour
     {
         OnPlayTitleEndAction?.Invoke();
 
-        CenterTitle.text = animController.GetCurrentAnimationTitle();
         int currentAnimIndex = animController.GetCurrentAnimationIndex();
+        CenterTitle.text = animationDatas[currentAnimIndex].animationTitle;
 
         #region Left Titles
         // If the current animation index is the FIRST ONE or the SECOND ONE of the list, set the close left and far left titles to the last two titles in the list

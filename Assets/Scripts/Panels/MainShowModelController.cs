@@ -7,8 +7,12 @@ public class MainShowModelController : MonoBehaviour
     private int currentAnimationIndex;
     
     private bool animIsPlaying = false;
-    private bool xrayModeIsOn = false;
-    private bool handsizeMode = true;
+    private GameObject playerGameObject;
+
+    private ModelMatMode currentModelMateriMode;
+    private bool cutMode = false;
+    private bool realWorldMode = false;
+    private bool handsizeMode = false;
 
     private Dictionary<int, AnimationData> animationDataDict;
 
@@ -32,6 +36,7 @@ public class MainShowModelController : MonoBehaviour
 
         // Instantiate show model.
         InstantiateShowModel();
+        SetShowModelTransform(true);
 
         // Initialize the title view after preparing the animation data and show model.
         // So now title view is showing the current animation.
@@ -40,6 +45,10 @@ public class MainShowModelController : MonoBehaviour
 
         // Play animation when scene starts.
         PlayPauseAnimation();
+
+        currentModelMateriMode = ModelMatMode.NormalMode;
+
+        playerGameObject = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void SetAnimationDataDictionary()
@@ -57,12 +66,10 @@ public class MainShowModelController : MonoBehaviour
 
     public void InstantiateShowModel()
     {
-        GameObject model = Instantiate(modeldata.modelPrefab, modeldata.spawnPosition, Quaternion.Euler(modeldata.spawnAngle));
+        GameObject model = Instantiate(modeldata.modelPrefab);
         showModel = model.GetComponent<ShowModel>();
         showModel.InitModel(animationDataDict, currentAnimationIndex);
     }
-
-    public string GetCurrentAnimationTitle() => animationDataDict[currentAnimationIndex].animationTitle;
 
     public int GetCurrentAnimationIndex() => currentAnimationIndex;
 
@@ -105,23 +112,36 @@ public class MainShowModelController : MonoBehaviour
 
     public void ToggleFreeMode()
     {
-        // Disable hand size mode button, and change show model to small size;
+        SetModelModeAndChangeMaterials(ModelMatMode.FreeMode);
+
+        if (currentModelMateriMode == ModelMatMode.FreeMode)
+        {
+            if (modeldata.handSize)
+            {
+                SetShowModelTransform(false);
+            }
+        }
+        else
+            SetShowModelTransform(true);
     }
 
     public void ToggleXRayMode()
     {
-        xrayModeIsOn = !xrayModeIsOn;
-        showModel.SetModelXrayMode(xrayModeIsOn);
+        SetModelModeAndChangeMaterials(ModelMatMode.XrayMode);
     }
 
     public void TogglePanelObject()
     {
-        xrayModeIsOn = false;
-        showModel.SetModelXrayMode(xrayModeIsOn);
+        cutMode = !cutMode;
 
-        // Set active panel object
-        cutPanelObject.SetActive(!cutPanelObject.activeInHierarchy);
-        // Change material of the model to the "Cut shader" material.
+        SetModelModeAndChangeMaterials(cutMode ? ModelMatMode.CutMode : ModelMatMode.NormalMode);
+        cutPanelObject.SetActive(cutMode);
+    }
+
+    private void SetModelModeAndChangeMaterials(ModelMatMode modelMode)
+    {
+        currentModelMateriMode = currentModelMateriMode == modelMode ? ModelMatMode.NormalMode : modelMode;
+        showModel.SetModelMaterialFromMode(currentModelMateriMode);
     }
 
     public void ToggleRealWorldView()
@@ -134,5 +154,24 @@ public class MainShowModelController : MonoBehaviour
         // Disable panel button in real size mode;
         handsizeMode = !handsizeMode;
         animationView.EnablePanelObjectButton(handsizeMode);
+    }
+
+    private void SetShowModelTransform(bool realSize)
+    {
+        if (realSize)
+        {
+            showModel.transform.position = modeldata.spawnPosition;
+            showModel.transform.rotation = Quaternion.Euler(modeldata.spawnAngle);
+            showModel.transform.localScale = modeldata.spawnScale;
+        }
+        else
+        {
+            Vector3 handPosition = playerGameObject.transform.position + showModel.transform.forward * modeldata.handSizePositionOffset.z;
+            handPosition.y = modeldata.handSizePositionOffset.y;
+            showModel.transform.position = handPosition;
+
+            showModel.transform.rotation = Quaternion.Euler(modeldata.handSizeAngle);
+            showModel.transform.localScale = modeldata.HandSizeScale;
+        }
     }
 }

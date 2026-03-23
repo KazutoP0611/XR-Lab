@@ -46,18 +46,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShowModel
   anim: {fileID: 5135996505423911466}
-  xrayModeDatas:
+  modelMatDatas:
   - rend: {fileID: 6791380025915209914}
     originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
+    cutMat: {fileID: 2100000, guid: 605aa24578f14a64e9493f2b20268937, type: 2}
     xrayMat: {fileID: 2100000, guid: 5cd9318d531e79e43925dea8b2c2f12f, type: 2}
   - rend: {fileID: 8061162850387706130}
     originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
+    cutMat: {fileID: 2100000, guid: 605aa24578f14a64e9493f2b20268937, type: 2}
     xrayMat: {fileID: 2100000, guid: 84c73ee3dfa56a5468c43e1376adf75d, type: 2}
   - rend: {fileID: 5181165637375834946}
     originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
+    cutMat: {fileID: 2100000, guid: 605aa24578f14a64e9493f2b20268937, type: 2}
     xrayMat: {fileID: 2100000, guid: 84c73ee3dfa56a5468c43e1376adf75d, type: 2}
   - rend: {fileID: 8591613119705393545}
     originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
+    cutMat: {fileID: 2100000, guid: 605aa24578f14a64e9493f2b20268937, type: 2}
     xrayMat: {fileID: 2100000, guid: 357764fb77fe2414f88a79268d581f85, type: 2}
 --- !u!1001 &5940250396305691410
 PrefabInstance:
