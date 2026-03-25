@@ -10,9 +10,10 @@ public class MainShowModelController : MonoBehaviour
     private GameObject playerGameObject;
 
     private ModelMatMode currentModelMateriMode;
+    private bool freeMode = false;
     private bool cutMode = false;
     private bool realWorldMode = false;
-    private bool handsizeMode = false;
+    private bool giantSize = false;
 
     private Dictionary<int, AnimationData> animationDataDict;
 
@@ -29,26 +30,25 @@ public class MainShowModelController : MonoBehaviour
     private void Start()
     {
         if (animationView == null)
-            Debug.LogWarning("\"Animation View\" components has not been referenced yet.");
+            Debug.LogError("\"Animation View\" components has not been referenced yet.");
+
+        playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        currentModelMateriMode = ModelMatMode.NormalMat;
 
         // Prepare the animation data and show model before initializing the title view.
         SetAnimationDataDictionary();
 
         // Instantiate show model.
         InstantiateShowModel();
-        SetShowModelTransform(true);
+        SetShowModelTransform(false);
 
         // Initialize the title view after preparing the animation data and show model.
         // So now title view is showing the current animation.
-        animationView.InitTitleView(this);
+        animationView?.InitTitleView(this);
         // TODO Set up buttons.
 
         // Play animation when scene starts.
         PlayPauseAnimation();
-
-        currentModelMateriMode = ModelMatMode.NormalMode;
-
-        playerGameObject = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void SetAnimationDataDictionary()
@@ -69,6 +69,25 @@ public class MainShowModelController : MonoBehaviour
         GameObject model = Instantiate(modeldata.modelPrefab);
         showModel = model.GetComponent<ShowModel>();
         showModel.InitModel(animationDataDict, currentAnimationIndex);
+    }
+
+    private void SetShowModelTransform(bool giantSize)
+    {
+        if (giantSize)
+        {
+            showModel.transform.position = modeldata.giantSizePosition;
+            showModel.transform.rotation = Quaternion.Euler(modeldata.giantSizeRotate);
+            showModel.transform.localScale = modeldata.giantSizeScale;
+        }
+        else
+        {
+            Vector3 handPosition = playerGameObject.transform.position + showModel.transform.forward * modeldata.smallSizePositionOffset.z;
+            handPosition.y = modeldata.smallSizePositionOffset.y;
+            showModel.transform.position = handPosition;
+
+            showModel.transform.rotation = Quaternion.Euler(modeldata.smallSizeRotate);
+            showModel.transform.localScale = modeldata.smallSizeScale;
+        }
     }
 
     public int GetCurrentAnimationIndex() => currentAnimationIndex;
@@ -112,66 +131,46 @@ public class MainShowModelController : MonoBehaviour
 
     public void ToggleFreeMode()
     {
-        SetModelModeAndChangeMaterials(ModelMatMode.FreeMode);
+        freeMode = !freeMode;
 
-        if (currentModelMateriMode == ModelMatMode.FreeMode)
-        {
-            if (modeldata.handSize)
-            {
-                SetShowModelTransform(false);
-            }
-        }
-        else
-            SetShowModelTransform(true);
+        SetModelModeAndChangeMaterials(ModelMatMode.NormalMat);
+        showModel.SetMovableComponents(freeMode);
     }
 
     public void ToggleXRayMode()
     {
-        SetModelModeAndChangeMaterials(ModelMatMode.XrayMode);
+        SetModelModeAndChangeMaterials(ModelMatMode.XrayMat);
+
+        cutMode = false;
+        cutPanelObject.SetActive(false);
     }
 
     public void TogglePanelObject()
     {
         cutMode = !cutMode;
 
-        SetModelModeAndChangeMaterials(cutMode ? ModelMatMode.CutMode : ModelMatMode.NormalMode);
+        SetModelModeAndChangeMaterials(cutMode ? ModelMatMode.CutMat : ModelMatMode.NormalMat);
         cutPanelObject.SetActive(cutMode);
+    }
+
+    public void ToggleGiantSizeMode()
+    {
+        SetModelModeAndChangeMaterials(cutMode ? ModelMatMode.CutMat : ModelMatMode.NormalMat);
+
+        // Disable panel button in real size mode;
+        giantSize = !giantSize;
+        animationView.EnablePanelObjectButton(giantSize);
     }
 
     private void SetModelModeAndChangeMaterials(ModelMatMode modelMode)
     {
-        currentModelMateriMode = currentModelMateriMode == modelMode ? ModelMatMode.NormalMode : modelMode;
+        currentModelMateriMode = currentModelMateriMode == modelMode ? ModelMatMode.NormalMat : modelMode;
         showModel.SetModelMaterialFromMode(currentModelMateriMode);
     }
 
     public void ToggleRealWorldView()
     {
         // Toggle skybox and MR components;
-    }
-
-    public void ToggleHandSizeModel()
-    {
-        // Disable panel button in real size mode;
-        handsizeMode = !handsizeMode;
-        animationView.EnablePanelObjectButton(handsizeMode);
-    }
-
-    private void SetShowModelTransform(bool realSize)
-    {
-        if (realSize)
-        {
-            showModel.transform.position = modeldata.spawnPosition;
-            showModel.transform.rotation = Quaternion.Euler(modeldata.spawnAngle);
-            showModel.transform.localScale = modeldata.spawnScale;
-        }
-        else
-        {
-            Vector3 handPosition = playerGameObject.transform.position + showModel.transform.forward * modeldata.handSizePositionOffset.z;
-            handPosition.y = modeldata.handSizePositionOffset.y;
-            showModel.transform.position = handPosition;
-
-            showModel.transform.rotation = Quaternion.Euler(modeldata.handSizeAngle);
-            showModel.transform.localScale = modeldata.HandSizeScale;
-        }
+        realWorldMode = !realWorldMode;
     }
 }

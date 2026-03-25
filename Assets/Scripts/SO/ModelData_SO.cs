@@ -14,14 +14,14 @@ public class ModelData_SO : ScriptableObject
     public GameObject modelPrefab; // prefab that has "ShowModel" component;
     public AnimationData[] animationDatas;
 
-    [Header("Real Size Settings")]
-    public Vector3 spawnPosition;
-    public Vector3 spawnAngle;
-    public Vector3 spawnScale;
+    [Header("Giant Size Settings")]
+    public bool giantSize = false;
+    public Vector3 giantSizePosition;
+    public Vector3 giantSizeRotate;
+    public Vector3 giantSizeScale;
 
-    [Header("Hand Size Settings")]
-    public bool handSize = false;
-    public Vector3 handSizePositionOffset;
-    public Vector3 handSizeAngle;
-    public Vector3 HandSizeScale;
+    [Header("Small Size Settings")]
+    public Vector3 smallSizePositionOffset;
+    public Vector3 smallSizeRotate;
+    public Vector3 smallSizeScale;
 }

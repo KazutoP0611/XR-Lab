@@ -10700,7 +10700,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1763622099}
   toggleTransition: 1
   graphic: {fileID: 0}
-  m_Group: {fileID: 31738421}
+  m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -12256,7 +12256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hand size
+  m_text: Giant Size
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -18234,7 +18234,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1426785433}
   toggleTransition: 1
   graphic: {fileID: 0}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 31738421}
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -20343,7 +20343,7 @@ GameObject:
   - component: {fileID: 1346804764}
   - component: {fileID: 1346804763}
   m_Layer: 0
-  m_Name: Hand Size_Button
+  m_Name: Real Size_Button
   m_TagString: QDSUIToggleButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

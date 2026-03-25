@@ -42,7 +42,7 @@ public class AnimationView : MonoBehaviour
         UpdateAnimationTitles();
 
         // Set up buttons
-        EnableHandSizeButton(animController.modeldata.handSize);
+        EnableGiantSizeButton(animController.modeldata.giantSize);
     }
 
     public void PlayTitleAnimation(PanelAnimation animToPlay, Action OnPlayTitleEnd = null)
@@ -124,5 +124,5 @@ public class AnimationView : MonoBehaviour
 
     public void EnablePanelObjectButton(bool enable) => panelObjectButton.interactable = enable;
 
-    public void EnableHandSizeButton(bool enable) => handsizeButton.interactable = enable;
+    public void EnableGiantSizeButton(bool enable) => handsizeButton.interactable = enable;
 }

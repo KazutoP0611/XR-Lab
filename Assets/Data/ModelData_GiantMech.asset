@@ -28,10 +28,10 @@ MonoBehaviour:
     animationTitle: Walk Forward
   - animParam: walkBackward
     animationTitle: Walk Backward
-  spawnPosition: {x: 0, y: 0, z: 7}
-  spawnAngle: {x: 0, y: 180, z: 0}
-  spawnScale: {x: 1, y: 1, z: 1}
-  handSize: 1
-  handSizePositionOffset: {x: 0, y: 1.35, z: 1}
-  handSizeAngle: {x: 0, y: 180, z: 0}
-  HandSizeScale: {x: 0.1, y: 0.1, z: 0.1}
+  giantSize: 1
+  giantSizePosition: {x: 0, y: 0, z: 7}
+  giantSizeRotate: {x: 0, y: 180, z: 0}
+  giantSizeScale: {x: 1, y: 1, z: 1}
+  smallSizePositionOffset: {x: 0, y: 1.5, z: 1}
+  smallSizeRotate: {x: 0, y: 180, z: 0}
+  smallSizeScale: {x: 0.1, y: 0.1, z: 0.1}

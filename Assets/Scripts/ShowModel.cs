@@ -67,22 +67,23 @@ public class ShowModel : MonoBehaviour
     {
         switch (modelMode)
         {
-            case ModelMatMode.FreeMode:
+            case ModelMatMode.NormalMat:
                 foreach (var modelData in modelMatDatas)
                     modelData.rend.material = modelData.originMat;
                 break;
-            case ModelMatMode.NormalMode:
-                foreach (var modelData in modelMatDatas)
-                    modelData.rend.material = modelData.originMat;
-                break;
-            case ModelMatMode.CutMode:
+            case ModelMatMode.CutMat:
                 foreach (var modelData in modelMatDatas)
                     modelData.rend.material = modelData.cutMat;
                 break;
-            case ModelMatMode.XrayMode:
+            case ModelMatMode.XrayMat:
                 foreach (var modelData in modelMatDatas)
                     modelData.rend.material = modelData.xrayMat;
                 break;
         }
+    }
+
+    public void SetMovableComponents(bool enable)
+    {
+
     }
 }
