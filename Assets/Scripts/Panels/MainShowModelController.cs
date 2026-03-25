@@ -81,9 +81,9 @@ public class MainShowModelController : MonoBehaviour
         }
         else
         {
-            Vector3 handPosition = playerGameObject.transform.position + showModel.transform.forward * modeldata.smallSizePositionOffset.z;
-            handPosition.y = modeldata.smallSizePositionOffset.y;
-            showModel.transform.position = handPosition;
+            Vector3 smallSizePosition = playerGameObject.transform.position + playerGameObject.transform.forward * modeldata.smallSizePositionOffset.z;
+            smallSizePosition.y = modeldata.smallSizePositionOffset.y;
+            showModel.transform.position = smallSizePosition;
 
             showModel.transform.rotation = Quaternion.Euler(modeldata.smallSizeRotate);
             showModel.transform.localScale = modeldata.smallSizeScale;
@@ -133,7 +133,7 @@ public class MainShowModelController : MonoBehaviour
     {
         freeMode = !freeMode;
 
-        SetModelModeAndChangeMaterials(ModelMatMode.NormalMat);
+        // SetModelModeAndChangeMaterials(ModelMatMode.NormalMat);
         showModel.SetMovableComponents(freeMode);
     }
 
@@ -155,11 +155,15 @@ public class MainShowModelController : MonoBehaviour
 
     public void ToggleGiantSizeMode()
     {
-        SetModelModeAndChangeMaterials(cutMode ? ModelMatMode.CutMat : ModelMatMode.NormalMat);
+        giantSize = !giantSize;
+
+        SetModelModeAndChangeMaterials(ModelMatMode.NormalMat);
 
         // Disable panel button in real size mode;
-        giantSize = !giantSize;
-        animationView.EnablePanelObjectButton(giantSize);
+        animationView.EnableFreeModeButton(!giantSize);
+        animationView.EnablePanelObjectButton(!giantSize);
+
+        SetShowModelTransform(giantSize);
     }
 
     private void SetModelModeAndChangeMaterials(ModelMatMode modelMode)

@@ -31,8 +31,9 @@ public class AnimationView : MonoBehaviour
     public Sprite PauseSprite;
 
     [Header("Mode Button Settings")]
-    [SerializeField] private Toggle panelObjectButton;
-    [SerializeField] private Toggle handsizeButton;
+    [SerializeField] private Toggle freeModeButton;
+    [SerializeField] private Toggle cutModeButton;
+    [SerializeField] private Toggle giantSizeButton;
 
     public void InitTitleView(MainShowModelController animController)
     {
@@ -122,7 +123,9 @@ public class AnimationView : MonoBehaviour
             PlayButtonIcon.sprite = PlaySprite;
     }
 
-    public void EnablePanelObjectButton(bool enable) => panelObjectButton.interactable = enable;
+    public void EnableFreeModeButton(bool enable) => freeModeButton.interactable = enable;
 
-    public void EnableGiantSizeButton(bool enable) => handsizeButton.interactable = enable;
+    public void EnablePanelObjectButton(bool enable) => cutModeButton.interactable = enable;
+
+    public void EnableGiantSizeButton(bool enable) => giantSizeButton.interactable = enable;
 }
