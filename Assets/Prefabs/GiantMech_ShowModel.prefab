@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7593460383652669230}
   - component: {fileID: 4425171145669406868}
   m_Layer: 0
-  m_Name: GiantMech
+  m_Name: GiantMech_ShowModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
