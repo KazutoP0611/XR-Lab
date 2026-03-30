@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -15,37 +16,57 @@ public struct ModelMatData
 public class ShowModel : MonoBehaviour
 {
     private StateMachine stateMachine;
-
     private Dictionary<int, EntityState> animStates;
+    private GameObject cutPanel;
+    private bool cutShaderIsOn = false;
+
+    private MainShowModelController showModelController;
 
     [SerializeField] private Animator anim;
 
-    [Header("Model Data Settings")]
+    [Header("Model General Settings")]
     [SerializeField] private ModelMatData[] modelMatDatas;
+    [SerializeField] private string shaderLocation;
+    [SerializeField] private Collider modelInteractCollider;
 
-    private void Start()
-    {
-        
-    }
-
-    public void InitModel(Dictionary<int, AnimationData> animationDatas, int currentAnimationIndex)
+    public void InitModel(MainShowModelController showModelController)
     {
         stateMachine = new StateMachine();
+        this.showModelController = showModelController;
 
+        // Assign cut panel
+        cutPanel = showModelController.cutPanelObject;
+
+        // Assign animation data
+        var animationDataDict = showModelController.animationDataDict;
         animStates = new Dictionary<int, EntityState>();
-        for (int i = 0; i < animationDatas.Count; i++)
+
+        for (int i = 0; i < animationDataDict.Count; i++)
         {
-            EntityState state = new EntityState(anim, animationDatas[i].animParam);
+            EntityState state = new EntityState(anim, animationDataDict[i].animParam);
             animStates.Add(i, state);
         }
 
-        stateMachine.Initialize(animStates[currentAnimationIndex]);
+        stateMachine.Initialize(animStates[showModelController.GetCurrentAnimationIndex()]);
     }
 
-    //private void Update()
-    //{
-    //    stateMachine.UpdateActiveState();
-    //}
+    private void Update()
+    {
+        if (cutShaderIsOn)
+            UpdateCutPanelPositionInShader();
+    }
+
+    private void UpdateCutPanelPositionInShader()
+    {
+        foreach (var modelData in modelMatDatas)
+        {
+            if (modelData.rend.material.shader.name == shaderLocation)
+            {
+                modelData.rend.material.SetVector("_PanelPos", cutPanel.transform.position);
+                modelData.rend.material.SetVector("_PanelNormal", cutPanel.transform.TransformVector(new Vector3(0, 1, 0)));
+            }
+        }
+    }
 
     public void ChangeAnimation(int currentAnimationIndex)
     {
@@ -82,8 +103,7 @@ public class ShowModel : MonoBehaviour
         }
     }
 
-    public void SetMovableComponents(bool enable)
-    {
+    public void SetMovableComponents(bool enable) =>  modelInteractCollider.enabled = enable;
 
-    }
+    public void ActivateCutShader(bool activate) => cutShaderIsOn = activate;
 }

@@ -4,10 +4,9 @@ using UnityEngine;
 public class MainShowModelController : MonoBehaviour
 {
     private ShowModel showModel;
-    private int currentAnimationIndex;
-    
-    private bool animIsPlaying = false;
     private GameObject playerGameObject;
+    private int currentAnimationIndex;
+    private bool animIsPlaying = false;
 
     private ModelMatMode currentModelMateriMode;
     private bool freeMode = false;
@@ -15,17 +14,17 @@ public class MainShowModelController : MonoBehaviour
     private bool realWorldMode = false;
     private bool giantSize = false;
 
-    private Dictionary<int, AnimationData> animationDataDict;
-
+    public Dictionary<int, AnimationData> animationDataDict { get; private set; }
     public AnimationData[] animationDatas { get; private set; }
-
-    [SerializeField] private AnimationView animationView;
 
     [Header("General Details")]
     public ModelData_SO modeldata;
 
+    [Header("Animation View Details")]
+    [SerializeField] private AnimationView animationView;
+
     [Header("Cut Panel Details")]
-    [SerializeField] private GameObject cutPanelObject;
+    public GameObject cutPanelObject;
 
     private void Start()
     {
@@ -40,12 +39,12 @@ public class MainShowModelController : MonoBehaviour
 
         // Instantiate show model.
         InstantiateShowModel();
+        // Set its position to small size's position
         SetShowModelTransform(false);
 
         // Initialize the title view after preparing the animation data and show model.
         // So now title view is showing the current animation.
         animationView?.InitTitleView(this);
-        // TODO Set up buttons.
 
         // Play animation when scene starts.
         PlayPauseAnimation();
@@ -68,7 +67,7 @@ public class MainShowModelController : MonoBehaviour
     {
         GameObject model = Instantiate(modeldata.modelPrefab);
         showModel = model.GetComponent<ShowModel>();
-        showModel.InitModel(animationDataDict, currentAnimationIndex);
+        showModel.InitModel(this);
     }
 
     private void SetShowModelTransform(bool giantSize)
@@ -129,28 +128,42 @@ public class MainShowModelController : MonoBehaviour
         showModel.ChangeAnimation(currentAnimationIndex);
     }
 
+    #region Model Mode Controller
     public void ToggleFreeMode()
     {
         freeMode = !freeMode;
 
-        // SetModelModeAndChangeMaterials(ModelMatMode.NormalMat);
         showModel.SetMovableComponents(freeMode);
     }
 
     public void ToggleXRayMode()
     {
-        SetModelModeAndChangeMaterials(ModelMatMode.XrayMat);
-
+        // Disable cut mode
         cutMode = false;
         cutPanelObject.SetActive(false);
+
+        // Change model's material
+        SetModelModeAndChangeMaterials(ModelMatMode.XrayMat);
     }
 
     public void TogglePanelObject()
     {
         cutMode = !cutMode;
-        Debug.LogWarning($"Cut Mode {cutMode}");
+
+        // Change model's material
         SetModelModeAndChangeMaterials(cutMode ? ModelMatMode.CutMat : ModelMatMode.NormalMat);
+
+        // Activate cut panel
         cutPanelObject.SetActive(cutMode);
+
+        // Set enable panel control component
+        showModel.ActivateCutShader(cutMode);
+    }
+
+    public void ToggleRealWorldView()
+    {
+        // Toggle skybox and MR components;
+        realWorldMode = !realWorldMode;
     }
 
     public void ToggleGiantSizeMode()
@@ -173,16 +186,11 @@ public class MainShowModelController : MonoBehaviour
         SetShowModelTransform(giantSize);
         //---------------------------------
     }
+    #endregion
 
     private void SetModelModeAndChangeMaterials(ModelMatMode modelMode)
     {
         currentModelMateriMode = currentModelMateriMode == modelMode ? ModelMatMode.NormalMat : modelMode;
         showModel.SetModelMaterialFromMode(currentModelMateriMode);
-    }
-
-    public void ToggleRealWorldView()
-    {
-        // Toggle skybox and MR components;
-        realWorldMode = !realWorldMode;
     }
 }

@@ -1225,6 +1225,8 @@ MonoBehaviour:
     originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
     cutMat: {fileID: 2100000, guid: 605aa24578f14a64e9493f2b20268937, type: 2}
     xrayMat: {fileID: 2100000, guid: 357764fb77fe2414f88a79268d581f85, type: 2}
+  shaderLocation: Shader Graphs/UniversalCutShader
+  modelInteractCollider: {fileID: 1995349797325065530}
 --- !u!1 &2662609618310704167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,7 +2966,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.6, y: 0.33, z: 0.49}
   m_Center: {x: 0, y: 0.135, z: -0.023}

@@ -15070,8 +15070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22ce7a19d791204590e677487252695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimationController
-  animationView: {fileID: 40757407}
   modeldata: {fileID: 11400000, guid: ff28686f6f1ca474eb2544f07b2806c4, type: 2}
+  animationView: {fileID: 40757407}
   cutPanelObject: {fileID: 479913839}
 --- !u!4 &790464134
 Transform:
@@ -16560,6 +16560,10 @@ PrefabInstance:
     - target: {fileID: 3681515795929826378, guid: 8b5cf848b29f5354183f12a57506e3e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878895743466997933, guid: 8b5cf848b29f5354183f12a57506e3e6, type: 3}
+      propertyPath: shaderLocation
+      value: Shader Graphs/UniversalCutShader
       objectReference: {fileID: 0}
     - target: {fileID: 8859068607139855161, guid: 8b5cf848b29f5354183f12a57506e3e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -39230,6 +39234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShowModel
   anim: {fileID: 5178962895623180148}
   modelMatDatas: []
+  shaderLocation: 
+  modelInteractCollider: {fileID: 0}
 --- !u!4 &4577780730105448035
 Transform:
   m_ObjectHideFlags: 0
