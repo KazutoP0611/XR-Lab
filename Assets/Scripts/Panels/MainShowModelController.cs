@@ -148,15 +148,22 @@ public class MainShowModelController : MonoBehaviour
     public void TogglePanelObject()
     {
         cutMode = !cutMode;
-
+        Debug.LogWarning($"Cut Mode {cutMode}");
         SetModelModeAndChangeMaterials(cutMode ? ModelMatMode.CutMat : ModelMatMode.NormalMat);
         cutPanelObject.SetActive(cutMode);
     }
 
     public void ToggleGiantSizeMode()
     {
+        // Close cut panel, turn off cut mode
+        if (cutMode == true)
+            animationView.SwitchCutMode(false);
+
+        // Giant Size Logic
+        //---------------------------------
         giantSize = !giantSize;
 
+        // Change model material to normal material
         SetModelModeAndChangeMaterials(ModelMatMode.NormalMat);
 
         // Disable panel button in real size mode;
@@ -164,6 +171,7 @@ public class MainShowModelController : MonoBehaviour
         animationView.EnablePanelObjectButton(!giantSize);
 
         SetShowModelTransform(giantSize);
+        //---------------------------------
     }
 
     private void SetModelModeAndChangeMaterials(ModelMatMode modelMode)

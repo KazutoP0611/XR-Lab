@@ -127,5 +127,7 @@ public class AnimationView : MonoBehaviour
 
     public void EnablePanelObjectButton(bool enable) => cutModeButton.interactable = enable;
 
+    public void SwitchCutMode(bool isOn) => cutModeButton.isOn = isOn;
+
     public void EnableGiantSizeButton(bool enable) => giantSizeButton.interactable = enable;
 }
