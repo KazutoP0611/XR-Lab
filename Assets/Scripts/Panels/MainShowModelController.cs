@@ -1,3 +1,4 @@
+using Oculus.Interaction.Samples;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ public class MainShowModelController : MonoBehaviour
 {
     private ShowModel showModel;
     private GameObject playerGameObject;
+    private MRPassthrough mrPassthrough;
     private int currentAnimationIndex;
     private bool animIsPlaying = false;
 
@@ -25,6 +27,7 @@ public class MainShowModelController : MonoBehaviour
 
     [Header("Cut Panel Details")]
     public GameObject cutPanelObject;
+    [SerializeField] private GameObject sphere;
 
     private void Start()
     {
@@ -32,6 +35,8 @@ public class MainShowModelController : MonoBehaviour
             Debug.LogError("\"Animation View\" components has not been referenced yet.");
 
         playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        mrPassthrough = GetComponent<MRPassthrough>();
+
         currentModelMateriMode = ModelMatMode.NormalMat;
 
         // Prepare the animation data and show model before initializing the title view.
@@ -164,6 +169,8 @@ public class MainShowModelController : MonoBehaviour
     {
         // Toggle skybox and MR components;
         realWorldMode = !realWorldMode;
+        sphere.SetActive(realWorldMode);
+        //mrPassthrough.TogglePassThrough();
     }
 
     public void ToggleGiantSizeMode()
