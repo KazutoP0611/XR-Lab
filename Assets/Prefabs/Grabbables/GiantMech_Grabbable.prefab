@@ -4050,6 +4050,38 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5181165637375834946, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181165637375834946, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181165637375834946, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181165637375834946, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791380025915209914, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791380025915209914, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791380025915209914, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791380025915209914, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7593460383652669230, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.05
@@ -4105,6 +4137,38 @@ PrefabInstance:
     - target: {fileID: 7593460383652669230, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061162850387706130, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061162850387706130, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061162850387706130, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061162850387706130, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591613119705393545, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591613119705393545, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591613119705393545, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591613119705393545, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
