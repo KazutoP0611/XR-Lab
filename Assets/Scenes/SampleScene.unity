@@ -15168,7 +15168,6 @@ MonoBehaviour:
   modeldata: {fileID: 11400000, guid: ff28686f6f1ca474eb2544f07b2806c4, type: 2}
   animationView: {fileID: 40757407}
   cutPanelObject: {fileID: 479913839}
-  sphere: {fileID: 1498612799}
 --- !u!4 &790464134
 Transform:
   m_ObjectHideFlags: 0
@@ -22344,7 +22343,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -24235,7 +24234,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

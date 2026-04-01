@@ -1209,19 +1209,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShowModel
   anim: {fileID: 7832663818398559132}
   modelMatDatas:
-  - rend: {fileID: 8487697073693001996}
+  - rends:
+    - {fileID: 8487697073693001996}
+    - {fileID: 9058851410403217285}
     originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
     cutMat: {fileID: 2100000, guid: 605aa24578f14a64e9493f2b20268937, type: 2}
     xrayMat: {fileID: 2100000, guid: 5cd9318d531e79e43925dea8b2c2f12f, type: 2}
-  - rend: {fileID: 4911895872132657316}
+  - rends:
+    - {fileID: 4911895872132657316}
+    - {fileID: 4844623070587507123}
     originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
     cutMat: {fileID: 2100000, guid: 605aa24578f14a64e9493f2b20268937, type: 2}
     xrayMat: {fileID: 2100000, guid: 84c73ee3dfa56a5468c43e1376adf75d, type: 2}
-  - rend: {fileID: 7787494583436102388}
+  - rends:
+    - {fileID: 7787494583436102388}
+    - {fileID: 3343993869117471502}
     originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
     cutMat: {fileID: 2100000, guid: 605aa24578f14a64e9493f2b20268937, type: 2}
     xrayMat: {fileID: 2100000, guid: 84c73ee3dfa56a5468c43e1376adf75d, type: 2}
-  - rend: {fileID: 6687288264201852991}
+  - rends:
+    - {fileID: 6687288264201852991}
+    - {fileID: 2668916742995312107}
     originMat: {fileID: 2100000, guid: 5cb2da7efbbd1e447bee4a7fccd36add, type: 2}
     cutMat: {fileID: 2100000, guid: 605aa24578f14a64e9493f2b20268937, type: 2}
     xrayMat: {fileID: 2100000, guid: 357764fb77fe2414f88a79268d581f85, type: 2}
@@ -4058,6 +4066,66 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: shaderLocation
+      value: Shader Graphs/UniversalCutShader
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: modelInteractCollider
+      value: 
+      objectReference: {fileID: 1995349797325065530}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: modelMatDatas.Array.data[0].rends.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: modelMatDatas.Array.data[1].rends.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: modelMatDatas.Array.data[2].rends.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: modelMatDatas.Array.data[3].rends.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: 'modelMatDatas.Array.data[0].rends.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8487697073693001996}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: 'modelMatDatas.Array.data[0].rends.Array.data[1]'
+      value: 
+      objectReference: {fileID: 9058851410403217285}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: 'modelMatDatas.Array.data[1].rends.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4911895872132657316}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: 'modelMatDatas.Array.data[1].rends.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4844623070587507123}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: 'modelMatDatas.Array.data[2].rends.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7787494583436102388}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: 'modelMatDatas.Array.data[2].rends.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3343993869117471502}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: 'modelMatDatas.Array.data[3].rends.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6687288264201852991}
+    - target: {fileID: 4425171145669406868, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: 'modelMatDatas.Array.data[3].rends.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2668916742995312107}
+    - target: {fileID: 4464821858279849032, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5826384925435888963, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4131,9 +4199,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+--- !u!137 &2668916742995312107 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1079854564608314461, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+  m_PrefabInstance: {fileID: 3167595840848261558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &3343993869117471502 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 404707237581769400, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+  m_PrefabInstance: {fileID: 3167595840848261558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4797719395191068312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7593460383652669230, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+  m_PrefabInstance: {fileID: 3167595840848261558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &4844623070587507123 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7551974319803604997, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
   m_PrefabInstance: {fileID: 3167595840848261558}
   m_PrefabAsset: {fileID: 0}
 --- !u!137 &4911895872132657316 stripped
@@ -4159,6 +4242,11 @@ Animator:
 --- !u!137 &8487697073693001996 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6791380025915209914, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+  m_PrefabInstance: {fileID: 3167595840848261558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &9058851410403217285 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6215546923364040243, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
   m_PrefabInstance: {fileID: 3167595840848261558}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4089783265319494721

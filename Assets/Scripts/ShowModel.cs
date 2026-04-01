@@ -7,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public struct ModelMatData
 {
-    public Renderer rend;
+    public Renderer[] rends;
     public Material originMat;
     public Material cutMat;
     public Material xrayMat;
@@ -60,11 +60,15 @@ public class ShowModel : MonoBehaviour
     {
         foreach (var modelData in modelMatDatas)
         {
-            if (modelData.rend.material.shader.name == shaderLocation)
+            foreach (var rend in modelData.rends)
             {
-                modelData.rend.material.SetVector("_PanelPos", cutPanel.transform.position);
-                modelData.rend.material.SetVector("_PanelNormal", cutPanel.transform.TransformVector(new Vector3(0, 1, 0)));
+                if (rend.material.shader.name == shaderLocation)
+                {
+                    rend.material.SetVector("_PanelPos", cutPanel.transform.position);
+                    rend.material.SetVector("_PanelNormal", cutPanel.transform.TransformVector(new Vector3(0, 1, 0)));
+                }
             }
+            
         }
     }
 
@@ -90,15 +94,33 @@ public class ShowModel : MonoBehaviour
         {
             case ModelMatMode.NormalMat:
                 foreach (var modelData in modelMatDatas)
-                    modelData.rend.material = modelData.originMat;
+                {
+                    foreach (var rend in modelData.rends)
+                    {
+                        rend.material = modelData.originMat;
+                    }
+                    //modelData.rend.material = modelData.originMat;
+                }
                 break;
             case ModelMatMode.CutMat:
                 foreach (var modelData in modelMatDatas)
-                    modelData.rend.material = modelData.cutMat;
+                {
+                    foreach (var rend in modelData.rends)
+                    {
+                        rend.material = modelData.cutMat;
+                    }
+                    //modelData.rend.material = modelData.cutMat;
+                }
                 break;
             case ModelMatMode.XrayMat:
                 foreach (var modelData in modelMatDatas)
-                    modelData.rend.material = modelData.xrayMat;
+                {
+                    foreach (var rend in modelData.rends)
+                    {
+                        rend.material = modelData.xrayMat;
+                    }
+                    //modelData.rend.material = modelData.xrayMat;
+                }
                 break;
         }
     }

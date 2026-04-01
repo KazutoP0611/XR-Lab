@@ -152,13 +152,12 @@ public class MainShowModelController : MonoBehaviour
 
     public void TogglePanelObject()
     {
+        // Activate cut panel
         cutMode = !cutMode;
+        cutPanelObject.SetActive(cutMode);
 
         // Change model's material
         SetModelModeAndChangeMaterials(cutMode ? ModelMatMode.CutMat : ModelMatMode.NormalMat);
-
-        // Activate cut panel
-        cutPanelObject.SetActive(cutMode);
 
         // Set enable panel control component
         showModel.ActivateCutShader(cutMode);
