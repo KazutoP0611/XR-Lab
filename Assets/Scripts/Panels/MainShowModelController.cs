@@ -43,8 +43,6 @@ public class MainShowModelController : MonoBehaviour
 
         // Instantiate show model.
         InstantiateShowModel();
-        // Set its position to small size's position
-        SetShowModelTransform(false);
 
         // Initialize the title view after preparing the animation data and show model.
         // So now title view is showing the current animation.
@@ -52,6 +50,9 @@ public class MainShowModelController : MonoBehaviour
 
         // Play animation when scene starts.
         PlayPauseAnimation();
+
+        // Set its position to small size's position
+        SetShowModelTransform(false);
     }
 
     private void SetAnimationDataDictionary()
@@ -85,6 +86,7 @@ public class MainShowModelController : MonoBehaviour
         else
         {
             Vector3 smallSizePosition = playerGameObject.transform.position + playerGameObject.transform.forward * modeldata.smallSizePositionOffset.z;
+            smallSizePosition.x = modeldata.smallSizePositionOffset.x;
             smallSizePosition.y = modeldata.smallSizePositionOffset.y;
             showModel.transform.position = smallSizePosition;
 

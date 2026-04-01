@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GiantMech_Cut-Mat
+  m_Name: Revolver_Cut-Mat
   m_Shader: {fileID: -6465566751694194690, guid: 8e1912f5c630c5c4bb6ad2b19c93ad46, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -58,7 +58,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Diffuse_Texture:
-        m_Texture: {fileID: 2800000, guid: 88a46038e994b5d4dbcbd6509ef41ecc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0a29acc293f08b445b24057cc991c942, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -66,7 +66,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emission_Texture:
-        m_Texture: {fileID: 2800000, guid: b9330190e5ca9fb48a5015ab26d2652a, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -78,11 +78,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic_Texture:
-        m_Texture: {fileID: 2800000, guid: 84b163a06b4fcbe4990b291697522a2f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 86611a8bd59a4084497ce7b67bd94db2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Texture:
-        m_Texture: {fileID: 2800000, guid: 8c5ee8f851e7d2141928c7466480de04, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5d2f58df7100ef149ae7d7563aa627fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -139,7 +139,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SampleGI: 0
-    - _Smoothness: 0.38
+    - _Smoothness: 0.39
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -149,10 +149,10 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 0.9555493, b: 0, a: 0.5019608}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emission_Color: {r: 4.237095, g: 4.237095, b: 4.237095, a: 1}
+    - _Emission_Color: {r: 1, g: 0.5273675, b: 0, a: 1}
     - _PanelNormal: {r: 0, g: 0, b: 0, a: 0}
     - _PanelPos: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
