@@ -4038,6 +4038,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8650079781995140022}
     m_Modifications:
+    - target: {fileID: 404707237581769400, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079854564608314461, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3491488324560424832, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
       propertyPath: m_Name
       value: GiantMech
@@ -4050,35 +4058,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5181165637375834946, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 10
+    - target: {fileID: 5826384925435888963, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5181165637375834946, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5181165637375834946, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5181165637375834946, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+    - target: {fileID: 6215546923364040243, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6791380025915209914, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6791380025915209914, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6791380025915209914, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6791380025915209914, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
+    - target: {fileID: 7551974319803604997, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0
       objectReference: {fileID: 0}
@@ -4137,38 +4125,6 @@ PrefabInstance:
     - target: {fileID: 7593460383652669230, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8061162850387706130, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8061162850387706130, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8061162850387706130, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8061162850387706130, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591613119705393545, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591613119705393545, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591613119705393545, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8591613119705393545, guid: 8eefb7fe37fefdf4da411e58137cf808, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

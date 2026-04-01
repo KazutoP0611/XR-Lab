@@ -125,6 +125,8 @@ public class AnimationView : MonoBehaviour
 
     public void EnableFreeModeButton(bool enable) => freeModeButton.interactable = enable;
 
+    public void SwitchFreeMode(bool isOn) => freeModeButton.isOn = isOn;
+
     public void EnablePanelObjectButton(bool enable) => cutModeButton.interactable = enable;
 
     public void SwitchCutMode(bool isOn) => cutModeButton.isOn = isOn;

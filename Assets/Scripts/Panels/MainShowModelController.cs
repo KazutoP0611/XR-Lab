@@ -27,7 +27,6 @@ public class MainShowModelController : MonoBehaviour
 
     [Header("Cut Panel Details")]
     public GameObject cutPanelObject;
-    [SerializeField] private GameObject sphere;
 
     private void Start()
     {
@@ -169,8 +168,7 @@ public class MainShowModelController : MonoBehaviour
     {
         // Toggle skybox and MR components;
         realWorldMode = !realWorldMode;
-        sphere.SetActive(realWorldMode);
-        //mrPassthrough.TogglePassThrough();
+        mrPassthrough.TogglePassThrough();
     }
 
     public void ToggleGiantSizeMode()
@@ -179,17 +177,21 @@ public class MainShowModelController : MonoBehaviour
         if (cutMode == true)
             animationView.SwitchCutMode(false);
 
+        if (freeMode == true)
+            animationView.SwitchFreeMode(false);
+
         // Giant Size Logic
         //---------------------------------
         giantSize = !giantSize;
 
         // Change model material to normal material
-        SetModelModeAndChangeMaterials(ModelMatMode.NormalMat);
+        //SetModelModeAndChangeMaterials(ModelMatMode.NormalMat);
 
-        // Disable panel button in real size mode;
+        // Disable panel buttons in giant size mode;
         animationView.EnableFreeModeButton(!giantSize);
         animationView.EnablePanelObjectButton(!giantSize);
 
+        // Enlarge model size
         SetShowModelTransform(giantSize);
         //---------------------------------
     }

@@ -15199,7 +15199,7 @@ MonoBehaviour:
   _objects:
   - {fileID: 736903089}
   _passThroughToggle: {fileID: 1112265626}
-  _layer: {fileID: 0}
+  _layer: {fileID: 1865643700}
   _camera: {fileID: 1621447003}
 --- !u!1 &796402295
 GameObject:
@@ -35788,7 +35788,7 @@ MonoBehaviour:
   _lutWeight: 1
   _flipLutY: 1
   serializedSurfaceGeometry: []
-  textureOpacity_: 1
+  textureOpacity_: 0
   edgeRenderingEnabled_: 0
   edgeColor_: {r: 1, g: 1, b: 1, a: 1}
   colorMapType: 0
