@@ -15920,7 +15920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22ce7a19d791204590e677487252695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimationController
-  modeldata: {fileID: 11400000, guid: d666865c3e65295469bd6a80777f9c01, type: 2}
+  modeldata: {fileID: 11400000, guid: ff28686f6f1ca474eb2544f07b2806c4, type: 2}
   animationView: {fileID: 40757407}
   cutPanelObject: {fileID: 479913839}
 --- !u!4 &790464134
