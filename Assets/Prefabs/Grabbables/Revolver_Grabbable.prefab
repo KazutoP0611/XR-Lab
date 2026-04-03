@@ -1489,7 +1489,7 @@ GameObject:
   - component: {fileID: 3836317069067956060}
   - component: {fileID: 3125210230199795828}
   - component: {fileID: 3218795147017016615}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Revolver_Grabbable
   m_TagString: Untagged
   m_Icon: {fileID: 0}

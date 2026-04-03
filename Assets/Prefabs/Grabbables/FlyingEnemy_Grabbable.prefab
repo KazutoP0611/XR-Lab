@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 3450946819693185563}
   - component: {fileID: 2566084884760252982}
   - component: {fileID: 7892142090814429587}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: FlyingEnemy_Grabbable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
