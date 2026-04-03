@@ -1807,11 +1807,15 @@ MonoBehaviour:
   modelMatDatas:
   - rends:
     - {fileID: 3891803126644463181}
-    originMat: {fileID: 2100000, guid: c6944328da703a744a3824ff15c058ef, type: 2}
-    cutMat: {fileID: 2100000, guid: d885be3d9c4b8f5459df5a122a625262, type: 2}
-    xrayMat: {fileID: 2100000, guid: 124acf1b66e93ce4eae1c84f8791fb73, type: 2}
+    originMats:
+    - {fileID: 2100000, guid: c6944328da703a744a3824ff15c058ef, type: 2}
+    cutMats:
+    - {fileID: 2100000, guid: d885be3d9c4b8f5459df5a122a625262, type: 2}
+    xrayMats:
+    - {fileID: 2100000, guid: 124acf1b66e93ce4eae1c84f8791fb73, type: 2}
   shaderLocation: Shader Graphs/UniversalCutShader
-  modelInteractCollider: {fileID: 5030236624511446725}
+  modelInteractColliders:
+  - {fileID: 5030236624511446725}
 --- !u!1 &5797436660682037973
 GameObject:
   m_ObjectHideFlags: 0

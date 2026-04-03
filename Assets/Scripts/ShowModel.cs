@@ -2,15 +2,16 @@ using Oculus.Interaction;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
 public struct ModelMatData
 {
     public Renderer[] rends;
-    public Material originMat;
-    public Material cutMat;
-    public Material xrayMat;
+    public Material[] originMats;
+    public Material[] cutMats;
+    public Material[] xrayMats;
 }
 
 public class ShowModel : MonoBehaviour
@@ -27,7 +28,7 @@ public class ShowModel : MonoBehaviour
     [Header("Model General Settings")]
     [SerializeField] private ModelMatData[] modelMatDatas;
     [SerializeField] private string shaderLocation;
-    [SerializeField] private Collider modelInteractCollider;
+    [SerializeField] private Collider[] modelInteractColliders;
 
     public void InitModel(MainShowModelController showModelController)
     {
@@ -62,10 +63,13 @@ public class ShowModel : MonoBehaviour
         {
             foreach (var rend in modelData.rends)
             {
-                if (rend.material.shader.name == shaderLocation)
+                foreach (var material in rend.materials)
                 {
-                    rend.material.SetVector("_PanelPos", cutPanel.transform.position);
-                    rend.material.SetVector("_PanelNormal", cutPanel.transform.TransformVector(new Vector3(0, 1, 0)));
+                    if (material.shader.name == shaderLocation)
+                    {
+                        material.SetVector("_PanelPos", cutPanel.transform.position);
+                        material.SetVector("_PanelNormal", cutPanel.transform.TransformVector(new Vector3(0, 1, 0)));
+                    }
                 }
             }
             
@@ -97,7 +101,7 @@ public class ShowModel : MonoBehaviour
                 {
                     foreach (var rend in modelData.rends)
                     {
-                        rend.material = modelData.originMat;
+                        rend.materials = modelData.originMats;
                     }
                     //modelData.rend.material = modelData.originMat;
                 }
@@ -107,7 +111,7 @@ public class ShowModel : MonoBehaviour
                 {
                     foreach (var rend in modelData.rends)
                     {
-                        rend.material = modelData.cutMat;
+                        rend.materials = modelData.cutMats;
                     }
                     //modelData.rend.material = modelData.cutMat;
                 }
@@ -117,7 +121,7 @@ public class ShowModel : MonoBehaviour
                 {
                     foreach (var rend in modelData.rends)
                     {
-                        rend.material = modelData.xrayMat;
+                        rend.materials = modelData.xrayMats;
                     }
                     //modelData.rend.material = modelData.xrayMat;
                 }
@@ -125,7 +129,11 @@ public class ShowModel : MonoBehaviour
         }
     }
 
-    public void SetMovableComponents(bool enable) =>  modelInteractCollider.enabled = enable;
-
+    public void SetMovableComponents(bool enable)
+    {
+        foreach (var collider in modelInteractColliders)
+            collider.enabled = enable;
+    }
+        
     public void ActivateCutShader(bool activate) => cutShaderIsOn = activate;
 }

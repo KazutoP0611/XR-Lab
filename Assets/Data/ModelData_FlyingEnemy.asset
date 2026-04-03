@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58d687b2e5a6274b8a14f7738f8fd1f, type: 3}
+  m_Name: ModelData_FlyingEnemy
+  m_EditorClassIdentifier: Assembly-CSharp::ModelData_SO
+  modelPrefab: {fileID: 1065666097729656500, guid: f28e609e3dc30ca4bb3a11450a1fd8aa, type: 3}
+  animationDatas:
+  - animParam: idle
+    animationTitle: Idle
+  - animParam: open
+    animationTitle: Open Vault
+  - animParam: shoot
+    animationTitle: Shoot
+  - animParam: close
+    animationTitle: Close Vault
+  giantSize: 0
+  giantSizePosition: {x: 0, y: 0, z: 0}
+  giantSizeRotate: {x: 0, y: 0, z: 0}
+  giantSizeScale: {x: 0, y: 0, z: 0}
+  smallSizePositionOffset: {x: 0, y: 1.3, z: 0.78}
+  smallSizeRotate: {x: 0, y: 0, z: 0}
+  smallSizeScale: {x: 1, y: 1, z: 1}
