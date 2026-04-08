@@ -18635,7 +18635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 957087330}
   m_Layer: 4
-  m_Name: ul_anchor (1)
+  m_Name: ul_anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34063,7 +34063,7 @@ MonoBehaviour:
   GuidePanelSpawnPoint: {fileID: 721490468}
   GuidePanelController: {fileID: 572489403}
   SettingMenuToggler: {fileID: 1753169871}
-  HomeScene: MainMenu
+  HomeScene: MainMenuScene
   ReadyPanel: {fileID: 0}
 --- !u!4 &1753169873
 Transform:

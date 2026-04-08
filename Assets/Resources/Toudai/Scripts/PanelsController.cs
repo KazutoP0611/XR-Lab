@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PanelsController : MonoBehaviour
 {
-    //public MenuToggler GuidePanelMenuToggler;
     [Header("Guide Panel Setting")]
     public Transform GuidePanelSpawnPoint;
     public GuidePanelController GuidePanelController;
@@ -17,6 +16,7 @@ public class PanelsController : MonoBehaviour
 
     [Header("Panels")]
     public Panel ReadyPanel;
+    [SerializeField] private Transform readyPanelTransform;
 
     private bool GuidePanelIsActive = false;
 
@@ -49,15 +49,18 @@ public class PanelsController : MonoBehaviour
     {
         if (active)
         {
-            SettingMenuToggler.HidePanel();
+            //SettingMenuToggler.HidePanel();
+
+            ReadyPanel.transform.position = readyPanelTransform.position;
+            ReadyPanel.transform.rotation = readyPanelTransform.rotation;
             ReadyPanel.OpenPanel();
         }
         else
         {
-            ReadyPanel.SetOnCloseAnimationEndEvent(() =>
-            {
-                SettingMenuToggler.ShowPanel();
-            });
+            //ReadyPanel.SetOnCloseAnimationEndEvent(() =>
+            //{
+            //    SettingMenuToggler.ShowPanel();
+            //});
 
             ReadyPanel.ClosePanel();
         }
@@ -72,6 +75,7 @@ public class PanelsController : MonoBehaviour
             });
         });
 
+        MRPassthoughController.instance.TurnOnPassthough(false);
         ReadyPanel.ClosePanel();
     }
 }

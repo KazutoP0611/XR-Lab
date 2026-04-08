@@ -12,7 +12,7 @@ public class FadePanelController : MonoBehaviour
     public Image FadePanel;
     public Color NormalColor;
     public Color BlackColor;
-    public float FadeinSecs = 2.0f;
+    public float FadeInSecs = 2.0f;
 
     public static FadePanelController Instance;
 
@@ -28,9 +28,14 @@ public class FadePanelController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        FadeToNormal();
+    }
+
     public void FadeToBlack(Action EndOfFade = null)
     {
-        FadePanel.DOColor(BlackColor, FadeinSecs)
+        FadePanel.DOColor(BlackColor, FadeInSecs)
             .OnComplete(() => {
                 EndOfFade?.Invoke();
             });
@@ -38,7 +43,7 @@ public class FadePanelController : MonoBehaviour
 
     public void FadeToNormal(Action EndOfFade = null)
     {
-        FadePanel.DOColor(NormalColor, FadeinSecs)
+        FadePanel.DOColor(NormalColor, FadeInSecs)
             .OnComplete(() => {
                 EndOfFade?.Invoke();
             });

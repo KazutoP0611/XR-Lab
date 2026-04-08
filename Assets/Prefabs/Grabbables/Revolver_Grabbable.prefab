@@ -1812,7 +1812,7 @@ MonoBehaviour:
     cutMats:
     - {fileID: 2100000, guid: d885be3d9c4b8f5459df5a122a625262, type: 2}
     xrayMats:
-    - {fileID: 2100000, guid: 124acf1b66e93ce4eae1c84f8791fb73, type: 2}
+    - {fileID: 2100000, guid: f58e562e29ba0c545b090615172809e5, type: 2}
   shaderLocation: Shader Graphs/UniversalCutShader
   modelInteractColliders:
   - {fileID: 5030236624511446725}

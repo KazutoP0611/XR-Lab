@@ -6,14 +6,12 @@ public class MainShowModelController : MonoBehaviour
 {
     private ShowModel showModel;
     private GameObject playerGameObject;
-    private MRPassthrough mrPassthrough;
     private int currentAnimationIndex;
     private bool animIsPlaying = false;
 
     private ModelMatMode currentModelMateriMode;
     private bool freeMode = false;
     private bool cutMode = false;
-    private bool realWorldMode = false;
     private bool giantSize = false;
 
     public Dictionary<int, AnimationData> animationDataDict { get; private set; }
@@ -34,7 +32,6 @@ public class MainShowModelController : MonoBehaviour
             Debug.LogError("\"Animation View\" components has not been referenced yet.");
 
         playerGameObject = GameObject.FindGameObjectWithTag("Player");
-        mrPassthrough = GetComponent<MRPassthrough>();
 
         currentModelMateriMode = ModelMatMode.NormalMat;
 
@@ -165,12 +162,7 @@ public class MainShowModelController : MonoBehaviour
         showModel.ActivateCutShader(cutMode);
     }
 
-    public void ToggleRealWorldView()
-    {
-        // Toggle skybox and MR components;
-        realWorldMode = !realWorldMode;
-        mrPassthrough.TogglePassThrough();
-    }
+    public void ToggleRealWorldView() => MRPassthoughController.instance.ToggleWorldView();
 
     public void ToggleGiantSizeMode()
     {
