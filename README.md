@@ -41,13 +41,13 @@ making the architecture clean, reusable, and easy to extend.
 Three independent scenes, one per model:
 
 - **Revolver**
-<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/75efc2cd-c793-4a7e-87d8-9de05fc2cff3" />
+<br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/75efc2cd-c793-4a7e-87d8-9de05fc2cff3" />
 
 - **Fantasy Enemy**
-<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/61c4f8fa-1576-4211-91a0-dffa188f8b76" />
+<br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/61c4f8fa-1576-4211-91a0-dffa188f8b76" />
 
 - **Mech Robot**
-<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/f08c60e5-1cb1-42f8-8547-c68d03835c03" />
+<br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/f08c60e5-1cb1-42f8-8547-c68d03835c03" />
 
 Each scene has its own **skybox** for a distinct visual atmosphere in VR mode, 
 adding polish and a sense of environment to the experience.
