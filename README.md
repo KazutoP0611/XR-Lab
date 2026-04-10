@@ -122,3 +122,11 @@ The project is driven by a custom scriptable object system:
 - Custom shader development for cut plane and X-ray visualization
 - MR passthrough integration on Meta Quest 3
 - Practical design applicable to medical visualization, engineering inspection, and education
+
+---
+
+## 🎨 Assets & Credits
+- [Fantasy Enemy Model](https://assetstore.unity.com/packages/3d/characters/robots/wooden-robots-sp-316970) by DJINGAREY
+- [Giant Mech Model](https://assetstore.unity.com/packages/3d/characters/robots/stylized-sci-fi-mech-robot-asset-355418#description) by RetroStyle Games
+- [Revolver Model](https://assetstore.unity.com/packages/3d/props/guns/reichsrevolver-m-1879-63609) by Nikolay Nagornov
+- [Sky Boxes](https://assetstore.unity.com/packages/2d/textures-materials/sky/surreal-skyboxes-254634) by igor-lir
