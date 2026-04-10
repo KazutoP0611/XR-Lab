@@ -35,19 +35,19 @@ making the architecture clean, reusable, and easy to extend.
 - A dedicated main menu scene for selecting which model to explore
 - Each model launches its own dedicated scene
 
-![xrlab_menu-ezgif com-resize](https://github.com/user-attachments/assets/5fd56e1e-800c-451a-9bce-ea1448cb9098)
+<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/5fd56e1e-800c-451a-9bce-ea1448cb9098" />
 
 ### 🌄 3 Model Scenes
 Three independent scenes, one per model:
 
 - **Revolver**
-  ![revolver-ezgif com-resize](https://github.com/user-attachments/assets/828b03b0-2fbf-49f5-b7d0-c040e459efdc)
+  <img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/828b03b0-2fbf-49f5-b7d0-c040e459efdc" />
 
 - **Fantasy Enemy**
-  ![flyingEnemy-ezgif com-resize](https://github.com/user-attachments/assets/54575bac-5cea-410c-b9de-df4f62337284)
+  <img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/54575bac-5cea-410c-b9de-df4f62337284" />
 
 - **Mech Robot**
-  ![giantmech-ezgif com-resize](https://github.com/user-attachments/assets/807cd7b4-2874-4008-acfa-f5878fad2f14)
+  <img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/807cd7b4-2874-4008-acfa-f5878fad2f14" />
 
 Each scene has its own **skybox** for a distinct visual atmosphere in VR mode, 
 adding polish and a sense of environment to the experience.
@@ -60,20 +60,20 @@ adding polish and a sense of environment to the experience.
 - Enables the box collider on the model
 - Grab, rotate, and resize the model freely using VR controllers or Hands Tracking
 
-![xrlab_freemode-ezgif com-resize](https://github.com/user-attachments/assets/1c0262ad-f09c-4658-ac92-4043195a8b09)
+<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/1c0262ad-f09c-4658-ac92-4043195a8b09" />
 
 ### 2. 🔭 X-Ray Mode
 - Swaps the model's material to a custom transparent materials
 - Visualizes internal structure through colored transparency, like looking through tinted glass
 
-![xrlab_xrayMode-ezgif com-resize](https://github.com/user-attachments/assets/5b37cf27-2e3c-4fe5-9bda-c9896d209dd6)
+<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/5b37cf27-2e3c-4fe5-9bda-c9896d209dd6" />
 
 ### 3. ✂️ Cut Mode
 - Uses a custom shader and special scripts for updating cut panel position's parameters
 - A moveable cut panel defines a clip plane on the model
 - Any part of the model beyond that panel becomes invisible, revealing a clean cross-section
 
-![xrlab_cutMode-ezgif com-resize](https://github.com/user-attachments/assets/889c624d-7611-4b75-a920-41dc20c511db)
+<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/889c624d-7611-4b75-a920-41dc20c511db" />
 
 ### 4. 🌍 Real World View
 - Toggles Meta Quest 3 passthrough mode
@@ -86,7 +86,7 @@ adding polish and a sense of environment to the experience.
 - On activation, the model moves away and scales up dramatically
 - Especially satisfying to watch alongside animations
 
-![xrlab_giantMode-ezgif com-resize](https://github.com/user-attachments/assets/8d0a1e98-c375-4ac8-894e-a04f4bf48db3)
+<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/8d0a1e98-c375-4ac8-894e-a04f4bf48db3" />
 
 ---
 
@@ -96,7 +96,7 @@ adding polish and a sense of environment to the experience.
 - Select any available animation from the VR UI panel
 - No manual UI wiring needed when adding new animations — just update the scriptable object
 
-![xrlab_animations-ezgif com-resize](https://github.com/user-attachments/assets/987fed17-0d09-4f77-bb90-415fe9f01a25)
+<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/987fed17-0d09-4f77-bb90-415fe9f01a25" />
 
 ---
 
@@ -104,7 +104,7 @@ adding polish and a sense of environment to the experience.
 - An in-scene guide panel explains how to use all interactions
 - Can be opened and closed freely during the session
 
-![xrlab_guide-ezgif com-resize](https://github.com/user-attachments/assets/688f3276-b6ba-45e1-9cb1-4a2323c27bdb)
+<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/688f3276-b6ba-45e1-9cb1-4a2323c27bdb" />
 
 ---
 
