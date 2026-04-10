@@ -1,58 +1,105 @@
 # XR Components : XR Lab
 
-**Interactive XR application for VR/MR model exploration, animation control, and advanced visualization.**  
-
-MR Animation Control Lab is an interactive XR project for VR/MR that demonstrates advanced Unity development, 
-including grab-and-rotate model interaction, animation timeline control, and custom cut/X-ray shaders for internal model visualization.
-Built for Meta Oculus Quest 3, it showcases my ability to create immersive, interactive systems and polished VR/MR experiences suitable for games, simulations, or training applications. 
+## 🎥 Gameplay Video
+[Watch Demo Video]()
 
 ---
 
-## 📹 Gameplay Video
+## 🥽 XR Components : XR Lab
+An interactive XR application built in Unity for VR/MR model exploration and advanced visualization.  
+Designed for **Meta Oculus Quest 3**, this project lets users grab, inspect, and explore 3D models 
+through five distinct interaction modes — including X-ray, cut plane visualization, and real-world passthrough.
 
-[Watch Gameplay Video]()
+Built around a **modular scriptable object system**, adding or swapping models requires minimal setup, 
+making the architecture clean, reusable, and easy to extend.
 
 ---
 
-## 🛠️ Technical Highlights
-
-- Engine: Unity 6000.2.9f1
+## ⚙️ Technical Highlights
+- Engine: Unity 6 (6000.2.9f1)
 - Platform: Meta Oculus Quest 3 (Android APK)
-- Programming: C#
-- VR/MR interaction: Grab, rotate, timeline control, animation selection
-- Custom shaders for transparency/X-ray visualization
-- Custom VR UI for timeline and animation selection
+- Programming Language: C#
+- Modular scriptable object-driven model for animation configuration, spawn point offset, giant size option, model prefab
+- Custom cut plane shader for internal cross-section visualization
+- X-ray transparency materials
+- MR passthrough toggle via headset API
+- Custom VR UI for interaction controls
+- Per-scene skybox environments
+- Supports both VR controllers and hand tracking input
 
 ---
 
-## 🎯 Core Features
+## 🗂️ Structure
 
-- **XR Support** – Works in VR and MR for real-world overlay interactions.  
-- **Platform** – Unity 6000.2.9f1; optimized for Meta Oculus Quest 3.  
-- **Models** – Includes 3 main models:  
-  - Revolver  
-  - Fantasy Enemy  
-  - Mech Robot  
-- **Cut/X-ray Shader** – Custom shader allows seeing inside models. Originally developed for medical MR applications to explore anatomy or internal mechanics.  
-- **Animation Control** –  
-  - Play / pause animations  
-  - Drag timeline to specific points  
-  - Select different animations per model  
-- **Grab & Manipulate** –  
-  - Grab and hold models naturally with VR controllers  
-  - Rotate models freely by hand  
-  - Rotate along a single axis using a custom rotate point tool  
-- **Custom VR UI** – Built using VR assets for timeline control, animation selection, and interaction.
+### 🏠 Main Menu
+- A dedicated main menu scene for selecting which model to explore
+- Each model launches its own dedicated scene
+
+### 🌄 3 Model Scenes
+Three independent scenes, one per model:
+
+- **Revolver**
+- **Fantasy Enemy**
+- **Mech Robot**
+
+Each scene has its own **skybox** for a distinct visual atmosphere in VR mode, 
+adding polish and a sense of environment to the experience.
 
 ---
 
-## 🎮 How to Use
+## 🎯 Five Interaction Modes
 
-1. Put on your Oculus Quest 3 headset.  
-2. Grab a model using your controller.  
-3. Use the timeline bar to play, pause, or scrub through animations.  
-4. Select the desired animation from the UI.  
-5. Use either hands or rotate point for precise rotation.  
-6. Use the cut/X-ray mode to see inside the model.  
+### 1. 🤲 Free Mode
+- Enables the box collider on the model
+- Grab, rotate, and resize the model freely using VR controllers or Hands Tracking
+
+### 2. 🔭 X-Ray Mode
+- Swaps the model's material to a custom transparent materials
+- Visualizes internal structure through colored transparency, like looking through tinted glass
+
+### 3. ✂️ Cut Mode
+- Uses a custom shader and special scripts for updating cut panel position's parameters
+- A moveable cut panel defines a clip plane on the model
+- Any part of the model beyond that panel becomes invisible, revealing a clean cross-section
+
+### 4. 🌍 Real World View
+- Toggles Meta Quest 3 passthrough mode
+- The player can see the real world and interact with the models
+- Seamlessly switches between full VR and MR overlay
+
+### 5. 🔭 Giant Size Mode
+- Configured per model via scriptable object settings
+- When enabled, the giant size button becomes interactable. When disabled, the button remains visible but cannot be used
+- On activation, the model moves away and scales up dramatically
+- Especially satisfying to watch alongside animations
 
 ---
+
+## 🎬 Animation Control
+- Animation options are populated automatically from the scriptable object configuration
+- Labels are mapped to animation clips via dictionary at runtime
+- Select any available animation from the VR UI panel
+- No manual UI wiring needed when adding new animations — just update the scriptable object
+
+---
+
+## 📋 Guide Panel
+- An in-scene guide panel explains how to use all interactions
+- Can be opened and closed freely during the session
+
+---
+
+## 🧩 Modular Setup
+The project is driven by a custom scriptable object system:
+- Set the target model and its animations in the scriptable object
+- The application reads the configuration at startup and applies it automatically
+- Adding a new model requires minimal scene changes
+- Animation controller titles are assigned dynamically via dictionary mapping
+
+---
+
+## 🧠 Project Focus
+- Modular, data-driven XR architecture
+- Custom shader development for cut plane and X-ray visualization
+- MR passthrough integration on Meta Quest 3
+- Practical design applicable to medical visualization, engineering inspection, and education
