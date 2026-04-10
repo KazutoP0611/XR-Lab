@@ -41,8 +41,13 @@ making the architecture clean, reusable, and easy to extend.
 Three independent scenes, one per model:
 
 - **Revolver**
+![revolver-ezgif com-resize](https://github.com/user-attachments/assets/828b03b0-2fbf-49f5-b7d0-c040e459efdc)
+
 - **Fantasy Enemy**
+![flyingEnemy-ezgif com-resize](https://github.com/user-attachments/assets/54575bac-5cea-410c-b9de-df4f62337284)
+
 - **Mech Robot**
+![giantmech-ezgif com-resize](https://github.com/user-attachments/assets/807cd7b4-2874-4008-acfa-f5878fad2f14)
 
 Each scene has its own **skybox** for a distinct visual atmosphere in VR mode, 
 adding polish and a sense of environment to the experience.
@@ -68,6 +73,8 @@ adding polish and a sense of environment to the experience.
 - A moveable cut panel defines a clip plane on the model
 - Any part of the model beyond that panel becomes invisible, revealing a clean cross-section
 
+![xrlab_cutMode-ezgif com-resize](https://github.com/user-attachments/assets/889c624d-7611-4b75-a920-41dc20c511db)
+
 ### 4. 🌍 Real World View
 - Toggles Meta Quest 3 passthrough mode
 - The player can see the real world and interact with the models
@@ -78,6 +85,8 @@ adding polish and a sense of environment to the experience.
 - When enabled, the giant size button becomes interactable. When disabled, the button remains visible but cannot be used
 - On activation, the model moves away and scales up dramatically
 - Especially satisfying to watch alongside animations
+
+![xrlab_giantMode-ezgif com-resize](https://github.com/user-attachments/assets/8d0a1e98-c375-4ac8-894e-a04f4bf48db3)
 
 ---
 
@@ -94,6 +103,8 @@ adding polish and a sense of environment to the experience.
 ## 📋 Guide Panel
 - An in-scene guide panel explains how to use all interactions
 - Can be opened and closed freely during the session
+
+![xrlab_guide-ezgif com-resize](https://github.com/user-attachments/assets/688f3276-b6ba-45e1-9cb1-4a2323c27bdb)
 
 ---
 
