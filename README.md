@@ -35,6 +35,8 @@ making the architecture clean, reusable, and easy to extend.
 - A dedicated main menu scene for selecting which model to explore
 - Each model launches its own dedicated scene
 
+![xrlab_menu-ezgif com-resize](https://github.com/user-attachments/assets/5fd56e1e-800c-451a-9bce-ea1448cb9098)
+
 ### 🌄 3 Model Scenes
 Three independent scenes, one per model:
 
@@ -53,9 +55,13 @@ adding polish and a sense of environment to the experience.
 - Enables the box collider on the model
 - Grab, rotate, and resize the model freely using VR controllers or Hands Tracking
 
+![xrlab_freemode-ezgif com-resize](https://github.com/user-attachments/assets/1c0262ad-f09c-4658-ac92-4043195a8b09)
+
 ### 2. 🔭 X-Ray Mode
 - Swaps the model's material to a custom transparent materials
 - Visualizes internal structure through colored transparency, like looking through tinted glass
+
+![xrlab_xrayMode-ezgif com-resize](https://github.com/user-attachments/assets/5b37cf27-2e3c-4fe5-9bda-c9896d209dd6)
 
 ### 3. ✂️ Cut Mode
 - Uses a custom shader and special scripts for updating cut panel position's parameters
@@ -80,6 +86,8 @@ adding polish and a sense of environment to the experience.
 - Labels are mapped to animation clips via dictionary at runtime
 - Select any available animation from the VR UI panel
 - No manual UI wiring needed when adding new animations — just update the scriptable object
+
+![xrlab_animations-ezgif com-resize](https://github.com/user-attachments/assets/987fed17-0d09-4f77-bb90-415fe9f01a25)
 
 ---
 
