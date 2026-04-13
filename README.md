@@ -6,7 +6,7 @@
 ---
 
 ## 🥽 XR Components : XR Lab
-A VR/MR model exploration tool built for Meta Oculus Quest 3. Five interaction modes — including custom cut plane and X-ray shaders — let users examine 3D models in ways standard viewers can't offer. Built on a **modular scriptable object system** for clean, extendable architecture.
+A VR/MR model exploration tool built for **Meta Oculus Quest 3**. Five interaction modes — including custom cut plane cross section shader and X-ray (transparent materials) — let users examine 3D models in ways standard viewers can't offer. Built on a **modular scriptable object system** for clean, extendable architecture.
 
 ---
 
@@ -122,9 +122,9 @@ The project is driven by a custom scriptable object system:
 
 ## 🧠 Project Focus
 - Modular, data-driven XR architecture
-- Custom shader development for cut plane and X-ray visualization
+- Custom shader development for cut plane cross section visualization
 - MR passthrough integration on Meta Quest 3
-- Practical design applicable to medical visualization, engineering inspection, and education
+- Practical design applicable to medical visualization 💊, engineering inspection 🚀, and education 🎓
 
 ---
 
