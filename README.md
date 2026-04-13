@@ -1,7 +1,7 @@
 # XR Components : XR Lab
 
 ## 🎥 Gameplay Video
-[Watch Demo Video]()
+[Watch Demo Video](https://youtu.be/sNB1mZZ82wo)
 
 ---
 
@@ -58,11 +58,13 @@ adding polish and a sense of environment to the experience.
 
 ### 1. 🤲 Free Mode
 - Enables the box collider on the model
-- Grab, rotate, and resize the model freely using VR controllers or Hands Tracking
+- Grab, rotate, and resize the model freely
+<br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/5cc62d2d-14d2-4ed2-943b-d6e65063c6af" />
 
-<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/5cc62d2d-14d2-4ed2-943b-d6e65063c6af" />
+- Supports both VR controllers and hand tracking
+<br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/b561e032-e1d5-4a9c-ad3a-981c01ad53fd" />
 
-### 2. 🔭 X-Ray Mode
+### 2. 🩻 X-Ray Mode
 - Swaps the model's material to a custom transparent materials
 - Visualizes internal structure through colored transparency, like looking through tinted glass
 
@@ -80,13 +82,15 @@ adding polish and a sense of environment to the experience.
 - The player can see the real world and interact with the models
 - Seamlessly switches between full VR and MR overlay
 
-### 5. 🔭 Giant Size Mode
+<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/b66669a8-5d57-41ed-8f54-99ae7bdc4da6" />
+
+### 5. 🐲 Giant Size Mode
 - Configured per model via scriptable object settings
 - When enabled, the giant size button becomes interactable. When disabled, the button remains visible but cannot be used
 - On activation, the model moves away and scales up dramatically
 - Especially satisfying to watch alongside animations
 
-<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/45ab404f-c2eb-4a4f-8c58-dd6477e6f173" />
+<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/0659ddd7-8df8-47db-8140-8b9edb03f30c" />
 
 ---
 
@@ -114,6 +118,10 @@ The project is driven by a custom scriptable object system:
 - The application reads the configuration at startup and applies it automatically
 - Adding a new model requires minimal scene changes
 - Animation controller titles are assigned dynamically via dictionary mapping
+
+<img width="365" height="531" alt="image" src="https://github.com/user-attachments/assets/c24ef8e3-6387-4c7e-a498-5a28e33dd1f9" />
+<br>
+<img width="367" height="203" alt="image" src="https://github.com/user-attachments/assets/df3f378c-9953-4ca2-ac4f-0380f0af4dc9" />
 
 ---
 
