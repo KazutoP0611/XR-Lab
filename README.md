@@ -6,12 +6,7 @@
 ---
 
 ## 🥽 XR Components : XR Lab
-An interactive XR application built in Unity for VR/MR model exploration and advanced visualization.  
-Designed for **Meta Oculus Quest 3**, this project lets users grab, inspect, and explore 3D models 
-through five distinct interaction modes — including X-ray, cut plane visualization, and real-world passthrough.
-
-Built around a **modular scriptable object system**, adding or swapping models requires minimal setup, 
-making the architecture clean, reusable, and easy to extend.
+A VR/MR model exploration tool built for Meta Oculus Quest 3. Five interaction modes — including custom cut plane and X-ray shaders — let users examine 3D models in ways standard viewers can't offer. Built on a **modular scriptable object system** for clean, extendable architecture.
 
 ---
 
@@ -65,7 +60,7 @@ adding polish and a sense of environment to the experience.
 <br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/b561e032-e1d5-4a9c-ad3a-981c01ad53fd" />
 
 ### 2. 🩻 X-Ray Mode
-- Swaps the model's material to a custom transparent materials
+- Swaps the model's material to a custom transparent material
 - Visualizes internal structure through colored transparency, like looking through tinted glass
 
 <img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/c209e3cb-a7c1-4103-b1e2-ecf86def9dc5" />
